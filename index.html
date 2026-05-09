@@ -1,6 +1,4 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Mines Study Hub — Finals 2026</title>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Mines Study Hub — Finals 2026</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap');
 *,*::before,*::after{box-sizing:border-box;}html,body{margin:0;padding:0;height:100%;overflow:hidden;background:#060910;font-family:'JetBrains Mono',ui-monospace,monospace;}
@@ -20,12 +18,13 @@
 .tab-wrap.active .tb-sub{color:color-mix(in srgb,var(--c) 50%,#2a3a4a);}
 .t-prog-wrap{display:flex;align-items:center;gap:6px;}
 .t-prog-track{flex:1;height:3px;background:#141e2a;border-radius:2px;overflow:hidden;display:flex;min-width:52px;}
-.t-prog-c{height:100%;background:#3fb950;transition:width .5s ease;}.t-prog-n{height:100%;background:#d4a017;transition:width .5s ease;}
-.t-pct{font-size:8px;color:#2d3d4d;letter-spacing:.04em;white-space:nowrap;transition:color .18s;flex-shrink:0;}
+.t-prog-c{height:100%;background:#3fb950;transition:width .5s;}
+.t-prog-n{height:100%;background:#d4a017;transition:width .5s;}
+.t-pct{font-size:8px;color:#2d3d4d;letter-spacing:.04em;white-space:nowrap;flex-shrink:0;}
 .tab-wrap.active .t-pct{color:color-mix(in srgb,var(--c) 60%,#3d4d5d);}
 .done-btn{align-self:stretch;background:none;border:none;border-left:1px solid #0e1520;padding:0 9px;cursor:pointer;font-size:9px;font-weight:700;font-family:'JetBrains Mono',monospace;color:#1e2d1e;letter-spacing:.05em;transition:all .18s;white-space:nowrap;display:flex;align-items:center;}
 .done-btn:hover{background:rgba(63,185,80,.08);color:#3fb950;}
-.tab-wrap.finalized .done-btn{color:#3fb950;background:rgba(63,185,80,.12);border-left-color:rgba(63,185,80,.15);}
+.tab-wrap.finalized .done-btn{color:#3fb950;background:rgba(63,185,80,.12);}
 .tab-wrap.finalized .tb-name{text-decoration:line-through;opacity:.55;}
 .tab-wrap.finalized::after{content:'';position:absolute;top:6px;right:6px;width:5px;height:5px;border-radius:50%;background:#3fb950;box-shadow:0 0 6px #3fb950;}
 #frame-container{width:100%;height:calc(100vh - 62px);position:relative;overflow:hidden;}
@@ -33,26 +32,11 @@
 .guide-frame.active{opacity:1;pointer-events:all;}
 </style></head><body>
 <nav id="nav"><div id="nav-logo"><div class="logo-top">Colorado School of Mines</div><div class="logo-bottom">Study Hub</div></div>
-  <div class="tab-wrap active" data-guide="csci200" style="--c:#f78166">
-    <button class="tab-btn" data-tab="csci200"><div class="tb-top"><span class="tb-name">CSCI 200</span><span class="tb-sub">C++</span></div><div class="t-prog-wrap"><div class="t-prog-track"><div class="t-prog-c" style="width:0%"></div><div class="t-prog-n" style="width:0%"></div></div><span class="t-pct">0/18</span></div></button>
-    <button class="done-btn" data-guide="csci200" title="Mark final complete">✓</button>
-  </div>
-  <div class="tab-wrap" data-guide="eeng282" style="--c:#58a6ff">
-    <button class="tab-btn" data-tab="eeng282"><div class="tb-top"><span class="tb-name">EENG 282</span><span class="tb-sub">Circuits</span></div><div class="t-prog-wrap"><div class="t-prog-track"><div class="t-prog-c" style="width:0%"></div><div class="t-prog-n" style="width:0%"></div></div><span class="t-pct">0/20</span></div></button>
-    <button class="done-btn" data-guide="eeng282" title="Mark final complete">✓</button>
-  </div>
-  <div class="tab-wrap" data-guide="math225" style="--c:#3fb950">
-    <button class="tab-btn" data-tab="math225"><div class="tb-top"><span class="tb-name">MATH 225</span><span class="tb-sub">Diff Eq</span></div><div class="t-prog-wrap"><div class="t-prog-track"><div class="t-prog-c" style="width:0%"></div><div class="t-prog-n" style="width:0%"></div></div><span class="t-pct">0/16</span></div></button>
-    <button class="done-btn" data-guide="math225" title="Mark final complete">✓</button>
-  </div>
-  <div class="tab-wrap" data-guide="chgn122" style="--c:#d2a8ff">
-    <button class="tab-btn" data-tab="chgn122"><div class="tb-top"><span class="tb-name">CHGN 122</span><span class="tb-sub">Chemistry</span></div><div class="t-prog-wrap"><div class="t-prog-track"><div class="t-prog-c" style="width:0%"></div><div class="t-prog-n" style="width:0%"></div></div><span class="t-pct">0/11</span></div></button>
-    <button class="done-btn" data-guide="chgn122" title="Mark final complete">✓</button>
-  </div>
-  <div class="tab-wrap" data-guide="math332" style="--c:#ffa657">
-    <button class="tab-btn" data-tab="math332"><div class="tb-top"><span class="tb-name">MATH 332</span><span class="tb-sub">Lin Alg</span></div><div class="t-prog-wrap"><div class="t-prog-track"><div class="t-prog-c" style="width:0%"></div><div class="t-prog-n" style="width:0%"></div></div><span class="t-pct">0/7</span></div></button>
-    <button class="done-btn" data-guide="math332" title="Mark final complete">✓</button>
-  </div></nav>
+  <div class="tab-wrap active" data-guide="csci200" style="--c:#f78166"><button class="tab-btn" data-tab="csci200"><div class="tb-top"><span class="tb-name">CSCI 200</span><span class="tb-sub">C++</span></div><div class="t-prog-wrap"><div class="t-prog-track"><div class="t-prog-c" style="width:0%"></div><div class="t-prog-n" style="width:0%"></div></div><span class="t-pct">0/18</span></div></button><button class="done-btn" data-guide="csci200">✓</button></div>
+  <div class="tab-wrap" data-guide="eeng282" style="--c:#58a6ff"><button class="tab-btn" data-tab="eeng282"><div class="tb-top"><span class="tb-name">EENG 282</span><span class="tb-sub">Circuits</span></div><div class="t-prog-wrap"><div class="t-prog-track"><div class="t-prog-c" style="width:0%"></div><div class="t-prog-n" style="width:0%"></div></div><span class="t-pct">0/20</span></div></button><button class="done-btn" data-guide="eeng282">✓</button></div>
+  <div class="tab-wrap" data-guide="math225" style="--c:#3fb950"><button class="tab-btn" data-tab="math225"><div class="tb-top"><span class="tb-name">MATH 225</span><span class="tb-sub">Diff Eq</span></div><div class="t-prog-wrap"><div class="t-prog-track"><div class="t-prog-c" style="width:0%"></div><div class="t-prog-n" style="width:0%"></div></div><span class="t-pct">0/16</span></div></button><button class="done-btn" data-guide="math225">✓</button></div>
+  <div class="tab-wrap" data-guide="chgn122" style="--c:#d2a8ff"><button class="tab-btn" data-tab="chgn122"><div class="tb-top"><span class="tb-name">CHGN 122</span><span class="tb-sub">Chemistry</span></div><div class="t-prog-wrap"><div class="t-prog-track"><div class="t-prog-c" style="width:0%"></div><div class="t-prog-n" style="width:0%"></div></div><span class="t-pct">0/11</span></div></button><button class="done-btn" data-guide="chgn122">✓</button></div>
+  <div class="tab-wrap" data-guide="math332" style="--c:#ffa657"><button class="tab-btn" data-tab="math332"><div class="tb-top"><span class="tb-name">MATH 332</span><span class="tb-sub">Lin Alg</span></div><div class="t-prog-wrap"><div class="t-prog-track"><div class="t-prog-c" style="width:0%"></div><div class="t-prog-n" style="width:0%"></div></div><span class="t-pct">0/7</span></div></button><button class="done-btn" data-guide="math332">✓</button></div></nav>
 <div id="frame-container">  <iframe id="frame-csci200" class="guide-frame active" srcdoc="<!DOCTYPE html>
 <html lang=&quot;en&quot;>
 <head>
@@ -564,37 +548,33 @@ em { color: var(--accent5); font-style: italic; }
 #bm-body::-webkit-scrollbar-thumb{background:#21293a;border-radius:2px;}
 #bm-empty{padding:20px 14px;text-align:center;color:#3d4f60;font-size:10px;letter-spacing:.06em;line-height:1.9;}
 .bm-item{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border-bottom:1px solid #0e1520;cursor:pointer;transition:background .12s;}
-.bm-item:last-child{border-bottom:none;}
-.bm-item:hover{background:#161b22;}
+.bm-item:last-child{border-bottom:none;}.bm-item:hover{background:#161b22;}
 .bm-item-dot{width:6px;height:6px;border-radius:50%;background:#f78166;margin-top:4px;flex-shrink:0;}
 .bm-item-text{flex:1;line-height:1.5;}
-.bm-item-label{color:#c9d1d9;font-size:10.5px;font-weight:600;letter-spacing:.02em;}
+.bm-item-label{color:#c9d1d9;font-size:10.5px;font-weight:600;}
 .bm-item-sect{color:#3d4f60;font-size:9.5px;margin-top:1px;}
 .bm-item-rm{background:none;border:none;cursor:pointer;color:#2d3d4d;font-size:12px;padding:0;line-height:1;transition:color .12s;flex-shrink:0;margin-top:2px;}
 .bm-item-rm:hover{color:#f85149;}
 
-.ced-wrap{margin:14px 0 4px;border-radius:8px;overflow:hidden;border:1.5px solid #2d3748;background:#0d1117;font-family:'Cascadia Code','Fira Code','JetBrains Mono',monospace}
+.ced-wrap{margin:14px 0 4px;border-radius:8px;overflow:hidden;border:1.5px solid #2d3748;background:#0d1117}
 .ced-toolbar{display:flex;align-items:center;justify-content:space-between;padding:6px 12px;background:#161b22;border-bottom:1px solid #21293a}
 .ced-toolbar-left{display:flex;align-items:center;gap:8px;font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#58a6ff;font-family:'JetBrains Mono',monospace}
 .ced-lang-badge{background:#1f2d3d;color:#79c0ff;padding:2px 7px;border-radius:4px;font-size:9px;letter-spacing:.1em}
 .ced-toolbar-right{display:flex;align-items:center;gap:8px}
-.ced-btn{font-size:9.5px;font-family:'JetBrains Mono',monospace;font-weight:700;letter-spacing:.06em;padding:3px 10px;border-radius:5px;border:none;cursor:pointer;transition:opacity .15s}
-.ced-btn:hover{opacity:.8}
-.ced-clear-btn{background:#21293a;color:#8b949e}
-.ced-saved-indicator{font-size:9px;font-family:'JetBrains Mono',monospace;color:#3fb950;letter-spacing:.06em;opacity:0;transition:opacity .4s}
+.ced-btn{font-size:9.5px;font-family:'JetBrains Mono',monospace;font-weight:700;padding:3px 10px;border-radius:5px;border:none;cursor:pointer;transition:opacity .15s}
+.ced-btn:hover{opacity:.8}.ced-clear-btn{background:#21293a;color:#8b949e}
+.ced-saved-indicator{font-size:9px;font-family:'JetBrains Mono',monospace;color:#3fb950;opacity:0;transition:opacity .4s}
 .ced-saved-indicator.visible{opacity:1}
-.ced-body{position:relative;display:flex}
+.ced-body{display:flex}
 .ced-lines{background:#0d1117;color:#3d4f60;font-size:12px;line-height:1.6;padding:12px 8px 12px 12px;text-align:right;min-width:38px;user-select:none;border-right:1px solid #1e2733;white-space:pre}
 .ced-textarea{flex:1;background:#0d1117;color:#c9d1d9;border:none;outline:none;resize:none;font-size:13px;line-height:1.6;padding:12px 14px;font-family:'Cascadia Code','Fira Code','JetBrains Mono',ui-monospace,monospace;tab-size:4;min-height:140px;caret-color:#58a6ff}
 .ced-textarea::placeholder{color:#3d4f60}
 .ans-wrap{margin:14px 0 4px}
 .ans-label{font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#f78166;font-family:'JetBrains Mono',monospace;margin-bottom:6px}
-.ans-textarea{width:100%;background:#0d1117;color:#c9d1d9;border:1.5px solid #2d3748;border-radius:6px;outline:none;resize:vertical;font-size:13px;line-height:1.6;padding:10px 12px;font-family:'Cascadia Code','Fira Code','JetBrains Mono',ui-monospace,monospace;min-height:60px;caret-color:#f78166}
-.ans-textarea:focus{border-color:#f78166}
-.ans-textarea::placeholder{color:#3d4f60}
+.ans-textarea{width:100%;background:#0d1117;color:#c9d1d9;border:1.5px solid #2d3748;border-radius:6px;outline:none;resize:vertical;font-size:13px;line-height:1.6;padding:10px 12px;font-family:'Cascadia Code','JetBrains Mono',ui-monospace,monospace;min-height:60px;caret-color:#f78166}
+.ans-textarea:focus{border-color:#f78166}.ans-textarea::placeholder{color:#3d4f60}
 </style>
 <script>
-
 (function(){
   function deb(fn,ms){var t;return function(){clearTimeout(t);t=setTimeout(fn,ms);};}
   function lines(ta,el){var n=ta.value.split('\n').length,s='';for(var i=1;i<=Math.max(n,8);i++)s+=i+'\n';el.textContent=s;}
@@ -607,10 +587,7 @@ em { color: var(--accent5); font-style: italic; }
     ta.addEventListener('scroll',function(){el.scrollTop=ta.scrollTop;});
     cb.addEventListener('click',function(){if(!ta.value||confirm('Clear your code?')){ta.value='';localStorage.removeItem(k);lines(ta,el);}});
   }
-  function initAns(w,k){
-    var ta=w.querySelector('.ans-textarea');var sv=localStorage.getItem(k);if(sv)ta.value=sv;
-    ta.addEventListener('input',function(){localStorage.setItem(k,ta.value);});
-  }
+  function initAns(w,k){var ta=w.querySelector('.ans-textarea');var sv=localStorage.getItem(k);if(sv)ta.value=sv;ta.addEventListener('input',function(){localStorage.setItem(k,ta.value);});}
   document.addEventListener('DOMContentLoaded',function(){
     document.querySelectorAll('.ced-wrap').forEach(function(w){initCed(w,w.dataset.key);});
     document.querySelectorAll('.ans-wrap[data-key]').forEach(function(w){initAns(w,w.dataset.key);});
@@ -620,40 +597,68 @@ em { color: var(--accent5); font-style: italic; }
 var G=&quot;csci200&quot;,PS=&quot;.problem-box&quot;,TS=&quot;.problem-num&quot;,IDS=[&quot;s0&quot;, &quot;s1&quot;, &quot;s2&quot;, &quot;s3&quot;, &quot;s4&quot;, &quot;s5&quot;, &quot;s6&quot;, &quot;s7&quot;, &quot;s8&quot;, &quot;s9&quot;, &quot;s10&quot;, &quot;s11&quot;, &quot;s12&quot;, &quot;s13&quot;, &quot;s14&quot;, &quot;s15&quot;, &quot;s16&quot;, &quot;s17&quot;],SL={&quot;s0&quot;: &quot;Exam Blueprint&quot;, &quot;s1&quot;: &quot;Structs&quot;, &quot;s2&quot;: &quot;Big Three&quot;, &quot;s3&quot;: &quot;Templates&quot;, &quot;s4&quot;: &quot;Inheritance&quot;, &quot;s5&quot;: &quot;Compile Poly&quot;, &quot;s6&quot;: &quot;Runtime Poly&quot;, &quot;s7&quot;: &quot;SOLID&quot;, &quot;s8&quot;: &quot;Arrays&quot;, &quot;s9&quot;: &quot;Linked Lists&quot;, &quot;s10&quot;: &quot;Exceptions&quot;, &quot;s11&quot;: &quot;Sorting&quot;, &quot;s12&quot;: &quot;Recursion&quot;, &quot;s13&quot;: &quot;Searching&quot;, &quot;s14&quot;: &quot;2D/BFS/DFS&quot;, &quot;s15&quot;: &quot;Func Ptrs&quot;, &quot;s16&quot;: &quot;Big-O&quot;, &quot;s17&quot;: &quot;Exam Tips&quot;},COL=&quot;#f78166&quot;;
 var ST=[{k:&quot;none&quot;,dot:&quot;●&quot;,txt:&quot;Not studied&quot;,bg:&quot;#1c1c1c22&quot;,fg:&quot;#888&quot;,bd:&quot;#ccc&quot;},{k:&quot;confident&quot;,dot:&quot;✓&quot;,txt:&quot;Confident&quot;,bg:&quot;#d1f5e0&quot;,fg:&quot;#1a5c38&quot;,bd:&quot;#5dbf88&quot;},{k:&quot;needs-work&quot;,dot:&quot;⚠&quot;,txt:&quot;Needs work&quot;,bg:&quot;#fffbe6&quot;,fg:&quot;#7a5500&quot;,bd:&quot;#d4a017&quot;}];
 var probs=[],sb,sbBody,bmCount,collapsed=false;
-document.addEventListener(&quot;click&quot;,function(e){var a=e.target.closest('a[href^=&quot;#&quot;]');if(!a)return;var h=a.getAttribute(&quot;href&quot;);if(!h||h===&quot;#&quot;)return;var t=document.querySelector(h);if(t){e.preventDefault();t.scrollIntoView({behavior:&quot;smooth&quot;});}},true);
+
+// Anchor-click bug fix
+document.addEventListener(&quot;click&quot;,function(e){
+  var a=e.target.closest('a[href^=&quot;#&quot;]');if(!a)return;
+  var h=a.getAttribute(&quot;href&quot;);if(!h||h===&quot;#&quot;)return;
+  var t=document.querySelector(h);
+  if(t){e.preventDefault();t.scrollIntoView({behavior:&quot;smooth&quot;});}
+},true);
+
 function getS(id){return localStorage.getItem(&quot;ss_&quot;+G+&quot;_&quot;+id)||&quot;none&quot;;}
 function setS(id,k){localStorage.setItem(&quot;ss_&quot;+G+&quot;_&quot;+id,k);refreshBar();try{window.parent.postMessage({t:&quot;su&quot;,g:G},&quot;*&quot;);}catch(e){}}
 function getBM(pid){return localStorage.getItem(&quot;bm_&quot;+G+&quot;_&quot;+pid)===&quot;1&quot;;}
 function setBM(pid,v){if(v)localStorage.setItem(&quot;bm_&quot;+G+&quot;_&quot;+pid,&quot;1&quot;);else localStorage.removeItem(&quot;bm_&quot;+G+&quot;_&quot;+pid);renderSidebar();}
 function findSect(el){var c=el;while(c){if(c.id&amp;&amp;SL[c.id])return SL[c.id];c=c.parentElement;}return &quot;&quot;;}
+function esc(s){return s.replace(/&amp;/g,&quot;&amp;amp;&quot;).replace(/</g,&quot;&amp;lt;&quot;).replace(/>/g,&quot;&amp;gt;&quot;);}
+
 function makeChip(id){
   var b=document.createElement(&quot;button&quot;);b.className=&quot;sc&quot;;b.dataset.section=id;applyS(b,getS(id));
-  b.addEventListener(&quot;click&quot;,function(e){e.preventDefault();e.stopPropagation();var cur=this.dataset.s,idx=ST.findIndex(function(s){return s.k===cur;}),nxt=ST[(idx+1)%ST.length];setS(id,nxt.k);applyS(this,nxt.k);});
+  b.addEventListener(&quot;click&quot;,function(e){
+    e.preventDefault();e.stopPropagation();
+    var cur=this.dataset.s,idx=ST.findIndex(function(s){return s.k===cur;}),nxt=ST[(idx+1)%ST.length];
+    setS(id,nxt.k);applyS(this,nxt.k);
+  });
   return b;
 }
 function applyS(b,k){var s=ST.find(function(x){return x.k===k;})||ST[0];b.dataset.s=s.k;b.textContent=s.dot+&quot; &quot;+s.txt;b.style.background=s.bg;b.style.color=s.fg;b.style.borderColor=s.bd;}
+
 function makeBmBtn(prob){
-  var b=document.createElement(&quot;button&quot;);b.className=&quot;bm-btn&quot;+(getBM(prob.id)?&quot; active&quot;:&quot;&quot;);b.title=&quot;Bookmark&quot;;b.textContent=&quot;🔖&quot;;
-  b.addEventListener(&quot;click&quot;,function(e){e.preventDefault();e.stopPropagation();var a=this.classList.toggle(&quot;active&quot;);setBM(prob.id,a);});
+  var b=document.createElement(&quot;button&quot;);
+  b.className=&quot;bm-btn&quot;+(getBM(prob.id)?&quot; active&quot;:&quot;&quot;);
+  b.title=&quot;Pin to review later&quot;;
+  b.textContent=&quot;📌&quot;;
+  b.addEventListener(&quot;click&quot;,function(e){
+    e.preventDefault();e.stopPropagation();
+    var a=this.classList.toggle(&quot;active&quot;);
+    setBM(prob.id,a);
+  });
   return b;
 }
-function esc(s){return s.replace(/&amp;/g,&quot;&amp;amp;&quot;).replace(/</g,&quot;&amp;lt;&quot;).replace(/>/g,&quot;&amp;gt;&quot;);}
+
 function refreshBar(){
   var c={none:0,confident:0,&quot;needs-work&quot;:0};
   IDS.forEach(function(id){var k=getS(id);c[k]=(c[k]||0)+1;});
   var tot=IDS.length||1;
   var cp=document.getElementById(&quot;__spb-c&quot;),np=document.getElementById(&quot;__spb-n&quot;);
   var sc=document.getElementById(&quot;__spb-sc&quot;),sn=document.getElementById(&quot;__spb-sn&quot;),su=document.getElementById(&quot;__spb-su&quot;);
-  if(cp)cp.style.width=(c.confident/tot*100)+&quot;%&quot;;if(np)np.style.width=(c[&quot;needs-work&quot;]/tot*100)+&quot;%&quot;;
-  if(sc)sc.textContent=c.confident+&quot; confident&quot;;if(sn)sn.textContent=c[&quot;needs-work&quot;]+&quot; needs work&quot;;if(su)su.textContent=c.none+&quot; not studied&quot;;
+  if(cp)cp.style.width=(c.confident/tot*100)+&quot;%&quot;;
+  if(np)np.style.width=(c[&quot;needs-work&quot;]/tot*100)+&quot;%&quot;;
+  if(sc)sc.textContent=c.confident+&quot; confident&quot;;
+  if(sn)sn.textContent=c[&quot;needs-work&quot;]+&quot; needs work&quot;;
+  if(su)su.textContent=c.none+&quot; not studied&quot;;
 }
+
 function buildBar(){
   var bar=document.createElement(&quot;div&quot;);bar.id=&quot;__spb&quot;;
   bar.innerHTML='<span class=&quot;spb-label&quot;>Progress</span><div class=&quot;spb-track&quot;><div class=&quot;spb-c&quot; id=&quot;__spb-c&quot; style=&quot;width:0%&quot;></div><div class=&quot;spb-n&quot; id=&quot;__spb-n&quot; style=&quot;width:0%&quot;></div></div><div class=&quot;spb-stats&quot;><span class=&quot;spb-stat&quot;><span class=&quot;spb-dot&quot; style=&quot;background:#3fb950&quot;></span><span id=&quot;__spb-sc&quot;>0 confident</span></span><span class=&quot;spb-stat&quot;><span class=&quot;spb-dot&quot; style=&quot;background:#d4a017&quot;></span><span id=&quot;__spb-sn&quot;>0 needs work</span></span><span class=&quot;spb-stat&quot;><span class=&quot;spb-dot&quot; style=&quot;background:#444&quot;></span><span id=&quot;__spb-su&quot;>0 not studied</span></span></div>';
   var nav=document.querySelector('nav,.toc-bar,.toc-wrapper,#toc-sidebar');
-  if(nav&amp;&amp;nav.nextSibling)nav.parentNode.insertBefore(bar,nav.nextSibling);else document.body.insertBefore(bar,document.body.firstChild);
+  if(nav&amp;&amp;nav.nextSibling)nav.parentNode.insertBefore(bar,nav.nextSibling);
+  else document.body.insertBefore(bar,document.body.firstChild);
   refreshBar();
 }
+
 function injectChips(){
   IDS.forEach(function(id){
     var el=document.getElementById(id);if(!el)return;var tgt=null;
@@ -666,17 +671,21 @@ function injectChips(){
     if(!tgt)return;tgt.appendChild(makeChip(id));
   });
 }
+
 function discoverProbs(){
   var els=document.querySelectorAll(PS);
   els.forEach(function(el,idx){
     var pid=&quot;prob_&quot;+idx;el.dataset.probId=pid;
-    var te=el.querySelector(TS),lbl=te?te.textContent.trim().slice(0,60):&quot;Problem &quot;+(idx+1);
+    var te=el.querySelector(TS);
+    var lbl=te?te.textContent.trim().replace(/\s+/g,' ').slice(0,60):&quot;Problem &quot;+(idx+1);
     var sect=findSect(el);
     probs.push({id:pid,label:lbl,section:sect,el:el});
-    var inj=te||el.querySelector(&quot;h2,h3,.problem-header,.example-header,.worked-header,.practice-header&quot;);
+    // Inject pin button next to the title element
+    var inj=te||el.querySelector(&quot;h2,h3,h4,.problem-header,.example-header&quot;);
     if(inj)inj.appendChild(makeBmBtn(probs[probs.length-1]));
   });
 }
+
 function renderSidebar(){
   var bm=probs.filter(function(p){return getBM(p.id);});
   if(bmCount)bmCount.textContent=bm.length;
@@ -684,15 +693,16 @@ function renderSidebar(){
   sbBody.innerHTML=&quot;&quot;;
   if(!bm.length){
     var e=document.createElement(&quot;div&quot;);e.id=&quot;bm-empty&quot;;
-    e.innerHTML=&quot;🔖<br>No bookmarks yet<br><span style='color:#2a3a4a;font-size:9px'>Click 🔖 on any practice problem</span>&quot;;
+    e.innerHTML=&quot;📌<br>Nothing pinned yet<br><span style='color:#2a3a4a;font-size:9px'>Click 📌 on a practice problem</span>&quot;;
     sbBody.appendChild(e);return;
   }
   bm.forEach(function(prob){
     var item=document.createElement(&quot;div&quot;);item.className=&quot;bm-item&quot;;
-    item.innerHTML='<div class=&quot;bm-item-dot&quot;></div><div class=&quot;bm-item-text&quot;><div class=&quot;bm-item-label&quot;>'+esc(prob.label)+'</div>'+(prob.section?'<div class=&quot;bm-item-sect&quot;>'+esc(prob.section)+'</div>':'')+' </div><button class=&quot;bm-item-rm&quot; title=&quot;Remove&quot;>✕</button>';
+    item.innerHTML='<div class=&quot;bm-item-dot&quot;></div><div class=&quot;bm-item-text&quot;><div class=&quot;bm-item-label&quot;>'+esc(prob.label)+'</div>'+(prob.section?'<div class=&quot;bm-item-sect&quot;>'+esc(prob.section)+'</div>':'')+'</div><button class=&quot;bm-item-rm&quot; title=&quot;Unpin&quot;>✕</button>';
     item.querySelector(&quot;.bm-item-text&quot;).addEventListener(&quot;click&quot;,function(){
       prob.el.scrollIntoView({behavior:&quot;smooth&quot;,block:&quot;start&quot;});
-      prob.el.style.transition=&quot;box-shadow .3s&quot;;prob.el.style.boxShadow=&quot;0 0 0 3px &quot;+COL+&quot;88&quot;;
+      prob.el.style.transition=&quot;box-shadow .3s&quot;;
+      prob.el.style.boxShadow=&quot;0 0 0 3px &quot;+COL+&quot;88&quot;;
       setTimeout(function(){prob.el.style.boxShadow=&quot;&quot;;},1400);
     });
     item.querySelector(&quot;.bm-item-rm&quot;).addEventListener(&quot;click&quot;,function(e){
@@ -702,10 +712,11 @@ function renderSidebar(){
     sbBody.appendChild(item);
   });
 }
+
 function buildSidebar(){
   sb=document.createElement(&quot;div&quot;);sb.id=&quot;bm-sidebar&quot;;
   var drag=document.createElement(&quot;div&quot;);drag.id=&quot;bm-drag&quot;;
-  drag.innerHTML='<div class=&quot;bm-grip&quot;><span></span><span></span><span></span></div><div id=&quot;bm-title&quot;>🔖 Bookmarks <span id=&quot;bm-count&quot;>0</span></div><button id=&quot;bm-collapse&quot;>−</button>';
+  drag.innerHTML='<div class=&quot;bm-grip&quot;><span></span><span></span><span></span></div><div id=&quot;bm-title&quot;>📌 Pinned <span id=&quot;bm-count&quot;>0</span></div><button id=&quot;bm-collapse&quot;>−</button>';
   sb.appendChild(drag);sbBody=document.createElement(&quot;div&quot;);sbBody.id=&quot;bm-body&quot;;sb.appendChild(sbBody);
   document.body.appendChild(sb);
   bmCount=document.getElementById(&quot;bm-count&quot;);
@@ -722,6 +733,7 @@ function buildSidebar(){
   document.addEventListener(&quot;touchend&quot;,function(){dr=false;});
   renderSidebar();
 }
+
 function init(){buildBar();injectChips();discoverProbs();buildSidebar();}
 if(document.readyState===&quot;loading&quot;)document.addEventListener(&quot;DOMContentLoaded&quot;,init);else init();
 })();
@@ -2926,7 +2938,7 @@ body{
 }
 /* ── Layout ── */
 #toc-sidebar{
-  position: sticky;top:0;left:0;bottom:0;
+  position:fixed;top:0;left:0;bottom:0;
   width:260px;
   background:var(--ink);
   color:#c8c0b4;
@@ -3282,7 +3294,6 @@ tr:nth-child(even) td{background:var(--cream)}
 @media print{
   #toc-sidebar{display:none}
   #main{margin-left:0;padding:20px}
-  .solution{display:block !important}
 }
 /* Horizontal rule section dividers */
 .section-rule{
@@ -3326,11 +3337,10 @@ tr:nth-child(even) td{background:var(--cream)}
 #bm-body::-webkit-scrollbar-thumb{background:#21293a;border-radius:2px;}
 #bm-empty{padding:20px 14px;text-align:center;color:#3d4f60;font-size:10px;letter-spacing:.06em;line-height:1.9;}
 .bm-item{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border-bottom:1px solid #0e1520;cursor:pointer;transition:background .12s;}
-.bm-item:last-child{border-bottom:none;}
-.bm-item:hover{background:#161b22;}
+.bm-item:last-child{border-bottom:none;}.bm-item:hover{background:#161b22;}
 .bm-item-dot{width:6px;height:6px;border-radius:50%;background:#58a6ff;margin-top:4px;flex-shrink:0;}
 .bm-item-text{flex:1;line-height:1.5;}
-.bm-item-label{color:#c9d1d9;font-size:10.5px;font-weight:600;letter-spacing:.02em;}
+.bm-item-label{color:#c9d1d9;font-size:10.5px;font-weight:600;}
 .bm-item-sect{color:#3d4f60;font-size:9.5px;margin-top:1px;}
 .bm-item-rm{background:none;border:none;cursor:pointer;color:#2d3d4d;font-size:12px;padding:0;line-height:1;transition:color .12s;flex-shrink:0;margin-top:2px;}
 .bm-item-rm:hover{color:#f85149;}
@@ -3339,43 +3349,71 @@ tr:nth-child(even) td{background:var(--cream)}
 <script>
 
 (function(){
-var G=&quot;eeng282&quot;,PS=&quot;.example&quot;,TS=&quot;.example-header&quot;,IDS=[&quot;overview&quot;, &quot;t1&quot;, &quot;t2&quot;, &quot;t3&quot;, &quot;t4&quot;, &quot;t5&quot;, &quot;t6&quot;, &quot;t7&quot;, &quot;t8&quot;, &quot;t9&quot;, &quot;t10&quot;, &quot;t11&quot;, &quot;t12&quot;, &quot;t13&quot;, &quot;t14&quot;, &quot;t15&quot;, &quot;t16&quot;, &quot;t17&quot;, &quot;t18&quot;, &quot;strategies&quot;],SL={&quot;overview&quot;: &quot;Overview&quot;, &quot;t1&quot;: &quot;Circuit Variables&quot;, &quot;t2&quot;: &quot;Elements&quot;, &quot;t3&quot;: &quot;KVL/KCL&quot;, &quot;t4&quot;: &quot;Series/Parallel&quot;, &quot;t5&quot;: &quot;Nodal&quot;, &quot;t6&quot;: &quot;Mesh&quot;, &quot;t7&quot;: &quot;Thevenin&quot;, &quot;t8&quot;: &quot;Op-Amps&quot;, &quot;t9&quot;: &quot;Energy/Power&quot;, &quot;t10&quot;: &quot;Capacitors&quot;, &quot;t11&quot;: &quot;Inductors&quot;, &quot;t12&quot;: &quot;RC/RL Trans.&quot;, &quot;t13&quot;: &quot;RLC Trans.&quot;, &quot;t14&quot;: &quot;AC Phasors&quot;, &quot;t15&quot;: &quot;AC Power&quot;, &quot;t16&quot;: &quot;Transformers&quot;, &quot;t17&quot;: &quot;Freq Response&quot;, &quot;t18&quot;: &quot;Filters&quot;, &quot;strategies&quot;: &quot;Exam Strategy&quot;},COL=&quot;#58a6ff&quot;;
+var G=&quot;eeng282&quot;,PS=&quot;.practice&quot;,TS=&quot;h4&quot;,IDS=[&quot;overview&quot;, &quot;t1&quot;, &quot;t2&quot;, &quot;t3&quot;, &quot;t4&quot;, &quot;t5&quot;, &quot;t6&quot;, &quot;t7&quot;, &quot;t8&quot;, &quot;t9&quot;, &quot;t10&quot;, &quot;t11&quot;, &quot;t12&quot;, &quot;t13&quot;, &quot;t14&quot;, &quot;t15&quot;, &quot;t16&quot;, &quot;t17&quot;, &quot;t18&quot;, &quot;strategies&quot;],SL={&quot;overview&quot;: &quot;Overview&quot;, &quot;t1&quot;: &quot;Circuit Variables&quot;, &quot;t2&quot;: &quot;Elements&quot;, &quot;t3&quot;: &quot;KVL/KCL&quot;, &quot;t4&quot;: &quot;Series/Parallel&quot;, &quot;t5&quot;: &quot;Nodal&quot;, &quot;t6&quot;: &quot;Mesh&quot;, &quot;t7&quot;: &quot;Thevenin&quot;, &quot;t8&quot;: &quot;Op-Amps&quot;, &quot;t9&quot;: &quot;Energy/Power&quot;, &quot;t10&quot;: &quot;Capacitors&quot;, &quot;t11&quot;: &quot;Inductors&quot;, &quot;t12&quot;: &quot;RC/RL Trans.&quot;, &quot;t13&quot;: &quot;RLC Trans.&quot;, &quot;t14&quot;: &quot;AC Phasors&quot;, &quot;t15&quot;: &quot;AC Power&quot;, &quot;t16&quot;: &quot;Transformers&quot;, &quot;t17&quot;: &quot;Freq Response&quot;, &quot;t18&quot;: &quot;Filters&quot;, &quot;strategies&quot;: &quot;Exam Strategy&quot;},COL=&quot;#58a6ff&quot;;
 var ST=[{k:&quot;none&quot;,dot:&quot;●&quot;,txt:&quot;Not studied&quot;,bg:&quot;#1c1c1c22&quot;,fg:&quot;#888&quot;,bd:&quot;#ccc&quot;},{k:&quot;confident&quot;,dot:&quot;✓&quot;,txt:&quot;Confident&quot;,bg:&quot;#d1f5e0&quot;,fg:&quot;#1a5c38&quot;,bd:&quot;#5dbf88&quot;},{k:&quot;needs-work&quot;,dot:&quot;⚠&quot;,txt:&quot;Needs work&quot;,bg:&quot;#fffbe6&quot;,fg:&quot;#7a5500&quot;,bd:&quot;#d4a017&quot;}];
 var probs=[],sb,sbBody,bmCount,collapsed=false;
-document.addEventListener(&quot;click&quot;,function(e){var a=e.target.closest('a[href^=&quot;#&quot;]');if(!a)return;var h=a.getAttribute(&quot;href&quot;);if(!h||h===&quot;#&quot;)return;var t=document.querySelector(h);if(t){e.preventDefault();t.scrollIntoView({behavior:&quot;smooth&quot;});}},true);
+
+// Anchor-click bug fix
+document.addEventListener(&quot;click&quot;,function(e){
+  var a=e.target.closest('a[href^=&quot;#&quot;]');if(!a)return;
+  var h=a.getAttribute(&quot;href&quot;);if(!h||h===&quot;#&quot;)return;
+  var t=document.querySelector(h);
+  if(t){e.preventDefault();t.scrollIntoView({behavior:&quot;smooth&quot;});}
+},true);
+
 function getS(id){return localStorage.getItem(&quot;ss_&quot;+G+&quot;_&quot;+id)||&quot;none&quot;;}
 function setS(id,k){localStorage.setItem(&quot;ss_&quot;+G+&quot;_&quot;+id,k);refreshBar();try{window.parent.postMessage({t:&quot;su&quot;,g:G},&quot;*&quot;);}catch(e){}}
 function getBM(pid){return localStorage.getItem(&quot;bm_&quot;+G+&quot;_&quot;+pid)===&quot;1&quot;;}
 function setBM(pid,v){if(v)localStorage.setItem(&quot;bm_&quot;+G+&quot;_&quot;+pid,&quot;1&quot;);else localStorage.removeItem(&quot;bm_&quot;+G+&quot;_&quot;+pid);renderSidebar();}
 function findSect(el){var c=el;while(c){if(c.id&amp;&amp;SL[c.id])return SL[c.id];c=c.parentElement;}return &quot;&quot;;}
+function esc(s){return s.replace(/&amp;/g,&quot;&amp;amp;&quot;).replace(/</g,&quot;&amp;lt;&quot;).replace(/>/g,&quot;&amp;gt;&quot;);}
+
 function makeChip(id){
   var b=document.createElement(&quot;button&quot;);b.className=&quot;sc&quot;;b.dataset.section=id;applyS(b,getS(id));
-  b.addEventListener(&quot;click&quot;,function(e){e.preventDefault();e.stopPropagation();var cur=this.dataset.s,idx=ST.findIndex(function(s){return s.k===cur;}),nxt=ST[(idx+1)%ST.length];setS(id,nxt.k);applyS(this,nxt.k);});
+  b.addEventListener(&quot;click&quot;,function(e){
+    e.preventDefault();e.stopPropagation();
+    var cur=this.dataset.s,idx=ST.findIndex(function(s){return s.k===cur;}),nxt=ST[(idx+1)%ST.length];
+    setS(id,nxt.k);applyS(this,nxt.k);
+  });
   return b;
 }
 function applyS(b,k){var s=ST.find(function(x){return x.k===k;})||ST[0];b.dataset.s=s.k;b.textContent=s.dot+&quot; &quot;+s.txt;b.style.background=s.bg;b.style.color=s.fg;b.style.borderColor=s.bd;}
+
 function makeBmBtn(prob){
-  var b=document.createElement(&quot;button&quot;);b.className=&quot;bm-btn&quot;+(getBM(prob.id)?&quot; active&quot;:&quot;&quot;);b.title=&quot;Bookmark&quot;;b.textContent=&quot;🔖&quot;;
-  b.addEventListener(&quot;click&quot;,function(e){e.preventDefault();e.stopPropagation();var a=this.classList.toggle(&quot;active&quot;);setBM(prob.id,a);});
+  var b=document.createElement(&quot;button&quot;);
+  b.className=&quot;bm-btn&quot;+(getBM(prob.id)?&quot; active&quot;:&quot;&quot;);
+  b.title=&quot;Pin to review later&quot;;
+  b.textContent=&quot;📌&quot;;
+  b.addEventListener(&quot;click&quot;,function(e){
+    e.preventDefault();e.stopPropagation();
+    var a=this.classList.toggle(&quot;active&quot;);
+    setBM(prob.id,a);
+  });
   return b;
 }
-function esc(s){return s.replace(/&amp;/g,&quot;&amp;amp;&quot;).replace(/</g,&quot;&amp;lt;&quot;).replace(/>/g,&quot;&amp;gt;&quot;);}
+
 function refreshBar(){
   var c={none:0,confident:0,&quot;needs-work&quot;:0};
   IDS.forEach(function(id){var k=getS(id);c[k]=(c[k]||0)+1;});
   var tot=IDS.length||1;
   var cp=document.getElementById(&quot;__spb-c&quot;),np=document.getElementById(&quot;__spb-n&quot;);
   var sc=document.getElementById(&quot;__spb-sc&quot;),sn=document.getElementById(&quot;__spb-sn&quot;),su=document.getElementById(&quot;__spb-su&quot;);
-  if(cp)cp.style.width=(c.confident/tot*100)+&quot;%&quot;;if(np)np.style.width=(c[&quot;needs-work&quot;]/tot*100)+&quot;%&quot;;
-  if(sc)sc.textContent=c.confident+&quot; confident&quot;;if(sn)sn.textContent=c[&quot;needs-work&quot;]+&quot; needs work&quot;;if(su)su.textContent=c.none+&quot; not studied&quot;;
+  if(cp)cp.style.width=(c.confident/tot*100)+&quot;%&quot;;
+  if(np)np.style.width=(c[&quot;needs-work&quot;]/tot*100)+&quot;%&quot;;
+  if(sc)sc.textContent=c.confident+&quot; confident&quot;;
+  if(sn)sn.textContent=c[&quot;needs-work&quot;]+&quot; needs work&quot;;
+  if(su)su.textContent=c.none+&quot; not studied&quot;;
 }
+
 function buildBar(){
   var bar=document.createElement(&quot;div&quot;);bar.id=&quot;__spb&quot;;
   bar.innerHTML='<span class=&quot;spb-label&quot;>Progress</span><div class=&quot;spb-track&quot;><div class=&quot;spb-c&quot; id=&quot;__spb-c&quot; style=&quot;width:0%&quot;></div><div class=&quot;spb-n&quot; id=&quot;__spb-n&quot; style=&quot;width:0%&quot;></div></div><div class=&quot;spb-stats&quot;><span class=&quot;spb-stat&quot;><span class=&quot;spb-dot&quot; style=&quot;background:#3fb950&quot;></span><span id=&quot;__spb-sc&quot;>0 confident</span></span><span class=&quot;spb-stat&quot;><span class=&quot;spb-dot&quot; style=&quot;background:#d4a017&quot;></span><span id=&quot;__spb-sn&quot;>0 needs work</span></span><span class=&quot;spb-stat&quot;><span class=&quot;spb-dot&quot; style=&quot;background:#444&quot;></span><span id=&quot;__spb-su&quot;>0 not studied</span></span></div>';
   var nav=document.querySelector('nav,.toc-bar,.toc-wrapper,#toc-sidebar');
-  if(nav&amp;&amp;nav.nextSibling)nav.parentNode.insertBefore(bar,nav.nextSibling);else document.body.insertBefore(bar,document.body.firstChild);
+  if(nav&amp;&amp;nav.nextSibling)nav.parentNode.insertBefore(bar,nav.nextSibling);
+  else document.body.insertBefore(bar,document.body.firstChild);
   refreshBar();
 }
+
 function injectChips(){
   IDS.forEach(function(id){
     var el=document.getElementById(id);if(!el)return;var tgt=null;
@@ -3388,17 +3426,21 @@ function injectChips(){
     if(!tgt)return;tgt.appendChild(makeChip(id));
   });
 }
+
 function discoverProbs(){
   var els=document.querySelectorAll(PS);
   els.forEach(function(el,idx){
     var pid=&quot;prob_&quot;+idx;el.dataset.probId=pid;
-    var te=el.querySelector(TS),lbl=te?te.textContent.trim().slice(0,60):&quot;Problem &quot;+(idx+1);
+    var te=el.querySelector(TS);
+    var lbl=te?te.textContent.trim().replace(/\s+/g,' ').slice(0,60):&quot;Problem &quot;+(idx+1);
     var sect=findSect(el);
     probs.push({id:pid,label:lbl,section:sect,el:el});
-    var inj=te||el.querySelector(&quot;h2,h3,.problem-header,.example-header,.worked-header,.practice-header&quot;);
+    // Inject pin button next to the title element
+    var inj=te||el.querySelector(&quot;h2,h3,h4,.problem-header,.example-header&quot;);
     if(inj)inj.appendChild(makeBmBtn(probs[probs.length-1]));
   });
 }
+
 function renderSidebar(){
   var bm=probs.filter(function(p){return getBM(p.id);});
   if(bmCount)bmCount.textContent=bm.length;
@@ -3406,15 +3448,16 @@ function renderSidebar(){
   sbBody.innerHTML=&quot;&quot;;
   if(!bm.length){
     var e=document.createElement(&quot;div&quot;);e.id=&quot;bm-empty&quot;;
-    e.innerHTML=&quot;🔖<br>No bookmarks yet<br><span style='color:#2a3a4a;font-size:9px'>Click 🔖 on any practice problem</span>&quot;;
+    e.innerHTML=&quot;📌<br>Nothing pinned yet<br><span style='color:#2a3a4a;font-size:9px'>Click 📌 on a practice problem</span>&quot;;
     sbBody.appendChild(e);return;
   }
   bm.forEach(function(prob){
     var item=document.createElement(&quot;div&quot;);item.className=&quot;bm-item&quot;;
-    item.innerHTML='<div class=&quot;bm-item-dot&quot;></div><div class=&quot;bm-item-text&quot;><div class=&quot;bm-item-label&quot;>'+esc(prob.label)+'</div>'+(prob.section?'<div class=&quot;bm-item-sect&quot;>'+esc(prob.section)+'</div>':'')+' </div><button class=&quot;bm-item-rm&quot; title=&quot;Remove&quot;>✕</button>';
+    item.innerHTML='<div class=&quot;bm-item-dot&quot;></div><div class=&quot;bm-item-text&quot;><div class=&quot;bm-item-label&quot;>'+esc(prob.label)+'</div>'+(prob.section?'<div class=&quot;bm-item-sect&quot;>'+esc(prob.section)+'</div>':'')+'</div><button class=&quot;bm-item-rm&quot; title=&quot;Unpin&quot;>✕</button>';
     item.querySelector(&quot;.bm-item-text&quot;).addEventListener(&quot;click&quot;,function(){
       prob.el.scrollIntoView({behavior:&quot;smooth&quot;,block:&quot;start&quot;});
-      prob.el.style.transition=&quot;box-shadow .3s&quot;;prob.el.style.boxShadow=&quot;0 0 0 3px &quot;+COL+&quot;88&quot;;
+      prob.el.style.transition=&quot;box-shadow .3s&quot;;
+      prob.el.style.boxShadow=&quot;0 0 0 3px &quot;+COL+&quot;88&quot;;
       setTimeout(function(){prob.el.style.boxShadow=&quot;&quot;;},1400);
     });
     item.querySelector(&quot;.bm-item-rm&quot;).addEventListener(&quot;click&quot;,function(e){
@@ -3424,10 +3467,11 @@ function renderSidebar(){
     sbBody.appendChild(item);
   });
 }
+
 function buildSidebar(){
   sb=document.createElement(&quot;div&quot;);sb.id=&quot;bm-sidebar&quot;;
   var drag=document.createElement(&quot;div&quot;);drag.id=&quot;bm-drag&quot;;
-  drag.innerHTML='<div class=&quot;bm-grip&quot;><span></span><span></span><span></span></div><div id=&quot;bm-title&quot;>🔖 Bookmarks <span id=&quot;bm-count&quot;>0</span></div><button id=&quot;bm-collapse&quot;>−</button>';
+  drag.innerHTML='<div class=&quot;bm-grip&quot;><span></span><span></span><span></span></div><div id=&quot;bm-title&quot;>📌 Pinned <span id=&quot;bm-count&quot;>0</span></div><button id=&quot;bm-collapse&quot;>−</button>';
   sb.appendChild(drag);sbBody=document.createElement(&quot;div&quot;);sbBody.id=&quot;bm-body&quot;;sb.appendChild(sbBody);
   document.body.appendChild(sb);
   bmCount=document.getElementById(&quot;bm-count&quot;);
@@ -3444,6 +3488,7 @@ function buildSidebar(){
   document.addEventListener(&quot;touchend&quot;,function(){dr=false;});
   renderSidebar();
 }
+
 function init(){buildBar();injectChips();discoverProbs();buildSidebar();}
 if(document.readyState===&quot;loading&quot;)document.addEventListener(&quot;DOMContentLoaded&quot;,init);else init();
 })();
@@ -3769,7 +3814,7 @@ if(document.readyState===&quot;loading&quot;)document.addEventListener(&quot;DOM
   <div class=&quot;practice&quot;>
     <h4>Practice 3.1</h4>
     <p>At a node, four currents meet: $i_1 = 3\,\text{A}$ entering, $i_2 = -1\,\text{A}$ entering (i.e., 1 A leaving), $i_3 = 4\,\text{A}$ leaving. Find $i_4$ (direction unknown).</p>
-    <button class=&quot;solution-toggle&quot; onclick=&quot;this.nextElementSibling.classList.toggle('open')&quot;>Show Solution</button>
+    <button class=&quot;solution-toggle&quot;>Show Solution</button>
     <div class=&quot;solution&quot;>
       KCL: $\sum i_{in} = \sum i_{out}$. Currents in: $3 + (-1) = 2\,\text{A}$ net in. Wait — let's use algebraic form: $i_1 - i_2 - i_3 + i_4 = 0$. Actually, define entering positive: $+i_1 - i_2 - i_3 + i_4 = 0$. Given $i_1=3$, $i_2=-1$ (so $-(-1)=+1$ as entering… let me use $\sum_{entering} = \sum_{leaving}$). In: $i_1 = 3$ A. Out: $i_3 = 4$ A; $i_2 = 1$ A leaving (since it was stated as $-1$ A entering). Net: $3 = 4 + 1 + i_4$? → $i_4 = -2\,\text{A}$, meaning $i_4 = 2\,\text{A}$ <em>entering</em>.
     </div>
@@ -3778,7 +3823,7 @@ if(document.readyState===&quot;loading&quot;)document.addEventListener(&quot;DOM
   <div class=&quot;practice&quot;>
     <h4>Practice 3.2</h4>
     <p>A loop contains: a 12 V battery, a 5 V battery (opposing), a $3\,\Omega$ resistor with $i = 1\,\text{A}$ through it, and a $4\,\Omega$ resistor. Use KVL to find the current $i$ through the loop (they are in series).</p>
-    <button class=&quot;solution-toggle&quot; onclick=&quot;this.nextElementSibling.classList.toggle('open')&quot;>Show Solution</button>
+    <button class=&quot;solution-toggle&quot;>Show Solution</button>
     <div class=&quot;solution&quot;>
       KVL (clockwise): $-12 + 5 + i(3) + i(4) = 0$ (if opposing battery is &quot;rise&quot; of 5 V against our direction). Wait — opposing means if 12 V drives clockwise, 5 V opposes (acts as a drop): $-12 + i(3) + 5 + i(4) = 0$ → $7i = 7$ → $i = 1\,\text{A}$.
     </div>
@@ -3861,7 +3906,7 @@ if(document.readyState===&quot;loading&quot;)document.addEventListener(&quot;DOM
   <div class=&quot;practice&quot;>
     <h4>Practice 4.1</h4>
     <p>Three resistors $R_1=6\,\Omega$, $R_2=3\,\Omega$, $R_3=2\,\Omega$ are connected in parallel. Find $R_{eq}$ and the voltage across them if total current supplied is $5\,\text{A}$.</p>
-    <button class=&quot;solution-toggle&quot; onclick=&quot;this.nextElementSibling.classList.toggle('open')&quot;>Show Solution</button>
+    <button class=&quot;solution-toggle&quot;>Show Solution</button>
     <div class=&quot;solution&quot;>
       $\frac{1}{R_{eq}} = \frac{1}{6}+\frac{1}{3}+\frac{1}{2} = \frac{1+2+3}{6} = 1\,\text{S}$ → $R_{eq} = 1\,\Omega$.<br>
       $v = i_s \cdot R_{eq} = 5 \times 1 = 5\,\text{V}$.
@@ -3871,7 +3916,7 @@ if(document.readyState===&quot;loading&quot;)document.addEventListener(&quot;DOM
   <div class=&quot;practice&quot;>
     <h4>Practice 4.2</h4>
     <p>A 24 V source drives four resistors: $R_1=8\,\Omega$ in series with a parallel combination of $R_2=12\,\Omega$, $R_3=6\,\Omega$, and $R_4=4\,\Omega$. Find the current through $R_3$.</p>
-    <button class=&quot;solution-toggle&quot; onclick=&quot;this.nextElementSibling.classList.toggle('open')&quot;>Show Solution</button>
+    <button class=&quot;solution-toggle&quot;>Show Solution</button>
     <div class=&quot;solution&quot;>
       Parallel combo: $\frac{1}{R_p} = \frac{1}{12}+\frac{1}{6}+\frac{1}{4} = \frac{1+2+3}{12} = \frac{6}{12}$ → $R_p = 2\,\Omega$.<br>
       $R_T = 8+2 = 10\,\Omega$. $i_s = 24/10 = 2.4\,\text{A}$.<br>
@@ -4026,7 +4071,7 @@ if(document.readyState===&quot;loading&quot;)document.addEventListener(&quot;DOM
   <div class=&quot;practice&quot;>
     <h4>Practice 6.1</h4>
     <p>Use node-voltage method: $10\,\text{V}$ source from ref to $v_1$; $5\,\Omega$ between $v_1$ and $v_2$; $4\,\Omega$ from $v_2$ to ref; $2\,\text{A}$ current source from $v_2$ to ref. Find the power supplied by the 2 A source.</p>
-    <button class=&quot;solution-toggle&quot; onclick=&quot;this.nextElementSibling.classList.toggle('open')&quot;>Show Solution</button>
+    <button class=&quot;solution-toggle&quot;>Show Solution</button>
     <div class=&quot;solution&quot;>
       $v_1 = 10\,\text{V}$ (constrained by source).<br>
       KCL at $v_2$: $\frac{v_2-10}{5}+\frac{v_2}{4} = -2$ (current source leaves, so $-2$ on left or $+2$ on right).<br>
@@ -4122,7 +4167,7 @@ if(document.readyState===&quot;loading&quot;)document.addEventListener(&quot;DOM
   <div class=&quot;practice&quot;>
     <h4>Practice 7.1</h4>
     <p>Use mesh analysis: $v_s = 30\,\text{V}$, $R_1=5\,\Omega$ (mesh 1 only), $R_2=10\,\Omega$ (shared), $R_3=8\,\Omega$ (mesh 2 only). Find $i_1$ and $i_2$.</p>
-    <button class=&quot;solution-toggle&quot; onclick=&quot;this.nextElementSibling.classList.toggle('open')&quot;>Show Solution</button>
+    <button class=&quot;solution-toggle&quot;>Show Solution</button>
     <div class=&quot;solution&quot;>
       Mesh 1: $-30 + 5i_1 + 10(i_1-i_2) = 0$ → $15i_1 - 10i_2 = 30$ ...(1)<br>
       Mesh 2: $10(i_2-i_1) + 8i_2 = 0$ → $-10i_1 + 18i_2 = 0$ ...(2)<br>
@@ -4214,7 +4259,7 @@ if(document.readyState===&quot;loading&quot;)document.addEventListener(&quot;DOM
   <div class=&quot;practice&quot;>
     <h4>Practice 8.1</h4>
     <p>Find the Thévenin equivalent at terminals $a$–$b$: 30 V source in series with $6\,\Omega$, then a node. From node: $3\,\Omega$ to terminal $a$; $12\,\Omega$ from node to ref; terminal $b$ = ref.</p>
-    <button class=&quot;solution-toggle&quot; onclick=&quot;this.nextElementSibling.classList.toggle('open')&quot;>Show Solution</button>
+    <button class=&quot;solution-toggle&quot;>Show Solution</button>
     <div class=&quot;solution&quot;>
       <strong>$V_{Th}$:</strong> Open circuit means no current through $3\,\Omega$. So node voltage: $v_n = 30 \times \frac{12}{6+12} = 20\,\text{V}$. $V_{Th} = v_n = 20\,\text{V}$ (no drop across $3\,\Omega$ with open terminals).<br><br>
       <strong>$R_{Th}$:</strong> Deactivate 30V source (short). $R_{Th} = 3 + (6\|12) = 3 + 4 = 7\,\Omega$.
@@ -4224,7 +4269,7 @@ if(document.readyState===&quot;loading&quot;)document.addEventListener(&quot;DOM
   <div class=&quot;practice&quot;>
     <h4>Practice 8.2</h4>
     <p>Convert the Norton equivalent ($I_N = 5\,\text{A}$, $R_N = 4\,\Omega$) to Thévenin form, then find the power delivered to a $6\,\Omega$ load.</p>
-    <button class=&quot;solution-toggle&quot; onclick=&quot;this.nextElementSibling.classList.toggle('open')&quot;>Show Solution</button>
+    <button class=&quot;solution-toggle&quot;>Show Solution</button>
     <div class=&quot;solution&quot;>
       $V_{Th} = I_N \times R_N = 5 \times 4 = 20\,\text{V}$, $R_{Th} = 4\,\Omega$.<br>
       With $R_L = 6\,\Omega$: $i = 20/(4+6) = 2\,\text{A}$.<br>
@@ -4646,7 +4691,7 @@ if(document.readyState===&quot;loading&quot;)document.addEventListener(&quot;DOM
   <div class=&quot;practice&quot;>
     <h4>Practice 14.1</h4>
     <p>Switch closes at $t=0$. Initial $i_L(0) = 2\,\text{A}$. After switching: 20V source, $R_{eq}=4\,\Omega$ (seen by L), $L=8\,\text{H}$. Find $i_L(t)$ and $i_L(t=2\,\text{s})$.</p>
-    <button class=&quot;solution-toggle&quot; onclick=&quot;this.nextElementSibling.classList.toggle('open')&quot;>Show Solution</button>
+    <button class=&quot;solution-toggle&quot;>Show Solution</button>
     <div class=&quot;solution&quot;>
       $x(t_0) = 2\,\text{A}$.<br>
       $x_F = 20/4 = 5\,\text{A}$ (L→short at DC, full source voltage across $R_{eq}$).<br>
@@ -5077,7 +5122,7 @@ if(document.readyState===&quot;loading&quot;)document.addEventListener(&quot;DOM
   <div class=&quot;practice&quot;>
     <h4>Practice 20.1</h4>
     <p>A load draws 5 kW at 0.8 lagging power factor from a 240 $V_{rms}$ source. Find: (a) apparent power $|S|$, (b) reactive power $Q$, (c) load current $I_{rms}$.</p>
-    <button class=&quot;solution-toggle&quot; onclick=&quot;this.nextElementSibling.classList.toggle('open')&quot;>Show Solution</button>
+    <button class=&quot;solution-toggle&quot;>Show Solution</button>
     <div class=&quot;solution&quot;>
       (a) $|S| = P/pf = 5000/0.8 = 6250\,\text{VA}$.<br>
       (b) $\theta = \arccos(0.8) = 36.87°$. $Q = |S|\sin\theta = 6250 \times 0.6 = 3750\,\text{VAR}$.<br>
@@ -5149,7 +5194,7 @@ if(document.readyState===&quot;loading&quot;)document.addEventListener(&quot;DOM
   <div class=&quot;practice&quot;>
     <h4>Practice 21.1</h4>
     <p>A factory loads: 50 kW at 0.6 lagging PF from a 4160 V$_{rms}$, 60 Hz line. Correct to unity PF. Find $Q_C$ needed and capacitance.</p>
-    <button class=&quot;solution-toggle&quot; onclick=&quot;this.nextElementSibling.classList.toggle('open')&quot;>Show Solution</button>
+    <button class=&quot;solution-toggle&quot;>Show Solution</button>
     <div class=&quot;solution&quot;>
       $\theta_{old} = \arccos(0.6) = 53.13°$; $\theta_{new} = \arccos(1) = 0°$.<br>
       $Q_C = P(\tan 53.13° - \tan 0°) = 50{,}000(1.333 - 0) = 66.65\,\text{kVAR}$.<br>
@@ -5161,7 +5206,7 @@ if(document.readyState===&quot;loading&quot;)document.addEventListener(&quot;DOM
   <div class=&quot;practice&quot;>
     <h4>Practice 21.2 — Multi-load circuit</h4>
     <p>Two loads on a common 120 V$_{rms}$ bus: Load 1: $P_1 = 2\,\text{kW}$, $pf_1 = 0.9$ lagging. Load 2: $P_2 = 3\,\text{kW}$, $pf_2 = 0.6$ leading. Find total $P$, $Q$, $|S|$, and overall $pf$.</p>
-    <button class=&quot;solution-toggle&quot; onclick=&quot;this.nextElementSibling.classList.toggle('open')&quot;>Show Solution</button>
+    <button class=&quot;solution-toggle&quot;>Show Solution</button>
     <div class=&quot;solution&quot;>
       Load 1: $\theta_1 = \arccos(0.9) = 25.84°$. $|S_1| = 2000/0.9 = 2222\,\text{VA}$. $Q_1 = 2222\sin(25.84°) = +968\,\text{VAR}$ (lagging → positive).<br><br>
       Load 2: $\theta_2 = \arccos(0.6) = 53.13°$. $|S_2| = 3000/0.6 = 5000\,\text{VA}$. $Q_2 = 5000\sin(-53.13°) = -4000\,\text{VAR}$ (leading → negative).<br><br>
@@ -5271,14 +5316,24 @@ if(document.readyState===&quot;loading&quot;)document.addEventListener(&quot;DOM
 
 </main>
 <script>
-// Toggle solutions
-document.querySelectorAll('.solution-toggle').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const sol = btn.nextElementSibling;
-    sol.classList.toggle('open');
-    btn.textContent = sol.classList.contains('open') ? 'Hide Solution' : 'Show Solution';
-  });
-});
+// Solution toggle — single handler, no onclick attribute
+(function() {
+  function initToggles() {
+    document.querySelectorAll('.solution-toggle').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var sol = this.nextElementSibling;
+        if (!sol) return;
+        var open = sol.classList.toggle('open');
+        this.textContent = open ? '▲ Hide Solution' : '▶ Show Solution';
+      });
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initToggles);
+  } else {
+    initToggles();
+  }
+})();
 </script>
 </body>
 </html>
@@ -5760,11 +5815,10 @@ document.querySelectorAll('.solution-toggle').forEach(btn => {
 #bm-body::-webkit-scrollbar-thumb{background:#21293a;border-radius:2px;}
 #bm-empty{padding:20px 14px;text-align:center;color:#3d4f60;font-size:10px;letter-spacing:.06em;line-height:1.9;}
 .bm-item{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border-bottom:1px solid #0e1520;cursor:pointer;transition:background .12s;}
-.bm-item:last-child{border-bottom:none;}
-.bm-item:hover{background:#161b22;}
+.bm-item:last-child{border-bottom:none;}.bm-item:hover{background:#161b22;}
 .bm-item-dot{width:6px;height:6px;border-radius:50%;background:#3fb950;margin-top:4px;flex-shrink:0;}
 .bm-item-text{flex:1;line-height:1.5;}
-.bm-item-label{color:#c9d1d9;font-size:10.5px;font-weight:600;letter-spacing:.02em;}
+.bm-item-label{color:#c9d1d9;font-size:10.5px;font-weight:600;}
 .bm-item-sect{color:#3d4f60;font-size:9.5px;margin-top:1px;}
 .bm-item-rm{background:none;border:none;cursor:pointer;color:#2d3d4d;font-size:12px;padding:0;line-height:1;transition:color .12s;flex-shrink:0;margin-top:2px;}
 .bm-item-rm:hover{color:#f85149;}
@@ -5776,40 +5830,68 @@ document.querySelectorAll('.solution-toggle').forEach(btn => {
 var G=&quot;math225&quot;,PS=&quot;.practice-item&quot;,TS=&quot;.pnum&quot;,IDS=[&quot;overview&quot;, &quot;picard&quot;, &quot;slope-fields&quot;, &quot;phase-lines&quot;, &quot;sep-var&quot;, &quot;ifm&quot;, &quot;muc1&quot;, &quot;bernoulli&quot;, &quot;modeling&quot;, &quot;higher-order&quot;, &quot;spring-mass&quot;, &quot;laplace&quot;, &quot;unit-step&quot;, &quot;cheat-sheets&quot;, &quot;exam-strategy&quot;, &quot;systems-odes&quot;],SL={&quot;overview&quot;: &quot;Overview&quot;, &quot;picard&quot;: &quot;Picard's Thm&quot;, &quot;slope-fields&quot;: &quot;Slope Fields&quot;, &quot;phase-lines&quot;: &quot;Phase Lines&quot;, &quot;sep-var&quot;: &quot;Sep. of Vars&quot;, &quot;ifm&quot;: &quot;Integrating Factor&quot;, &quot;muc1&quot;: &quot;MUC 1st Order&quot;, &quot;bernoulli&quot;: &quot;Bernoulli&quot;, &quot;modeling&quot;: &quot;Modeling&quot;, &quot;higher-order&quot;: &quot;Higher Order&quot;, &quot;spring-mass&quot;: &quot;Spring-Mass&quot;, &quot;laplace&quot;: &quot;Laplace&quot;, &quot;unit-step&quot;: &quot;Unit Step/Delta&quot;, &quot;cheat-sheets&quot;: &quot;Cheat Sheets&quot;, &quot;exam-strategy&quot;: &quot;Exam Strategy&quot;, &quot;systems-odes&quot;: &quot;Systems &amp; Portraits&quot;},COL=&quot;#3fb950&quot;;
 var ST=[{k:&quot;none&quot;,dot:&quot;●&quot;,txt:&quot;Not studied&quot;,bg:&quot;#1c1c1c22&quot;,fg:&quot;#888&quot;,bd:&quot;#ccc&quot;},{k:&quot;confident&quot;,dot:&quot;✓&quot;,txt:&quot;Confident&quot;,bg:&quot;#d1f5e0&quot;,fg:&quot;#1a5c38&quot;,bd:&quot;#5dbf88&quot;},{k:&quot;needs-work&quot;,dot:&quot;⚠&quot;,txt:&quot;Needs work&quot;,bg:&quot;#fffbe6&quot;,fg:&quot;#7a5500&quot;,bd:&quot;#d4a017&quot;}];
 var probs=[],sb,sbBody,bmCount,collapsed=false;
-document.addEventListener(&quot;click&quot;,function(e){var a=e.target.closest('a[href^=&quot;#&quot;]');if(!a)return;var h=a.getAttribute(&quot;href&quot;);if(!h||h===&quot;#&quot;)return;var t=document.querySelector(h);if(t){e.preventDefault();t.scrollIntoView({behavior:&quot;smooth&quot;});}},true);
+
+// Anchor-click bug fix
+document.addEventListener(&quot;click&quot;,function(e){
+  var a=e.target.closest('a[href^=&quot;#&quot;]');if(!a)return;
+  var h=a.getAttribute(&quot;href&quot;);if(!h||h===&quot;#&quot;)return;
+  var t=document.querySelector(h);
+  if(t){e.preventDefault();t.scrollIntoView({behavior:&quot;smooth&quot;});}
+},true);
+
 function getS(id){return localStorage.getItem(&quot;ss_&quot;+G+&quot;_&quot;+id)||&quot;none&quot;;}
 function setS(id,k){localStorage.setItem(&quot;ss_&quot;+G+&quot;_&quot;+id,k);refreshBar();try{window.parent.postMessage({t:&quot;su&quot;,g:G},&quot;*&quot;);}catch(e){}}
 function getBM(pid){return localStorage.getItem(&quot;bm_&quot;+G+&quot;_&quot;+pid)===&quot;1&quot;;}
 function setBM(pid,v){if(v)localStorage.setItem(&quot;bm_&quot;+G+&quot;_&quot;+pid,&quot;1&quot;);else localStorage.removeItem(&quot;bm_&quot;+G+&quot;_&quot;+pid);renderSidebar();}
 function findSect(el){var c=el;while(c){if(c.id&amp;&amp;SL[c.id])return SL[c.id];c=c.parentElement;}return &quot;&quot;;}
+function esc(s){return s.replace(/&amp;/g,&quot;&amp;amp;&quot;).replace(/</g,&quot;&amp;lt;&quot;).replace(/>/g,&quot;&amp;gt;&quot;);}
+
 function makeChip(id){
   var b=document.createElement(&quot;button&quot;);b.className=&quot;sc&quot;;b.dataset.section=id;applyS(b,getS(id));
-  b.addEventListener(&quot;click&quot;,function(e){e.preventDefault();e.stopPropagation();var cur=this.dataset.s,idx=ST.findIndex(function(s){return s.k===cur;}),nxt=ST[(idx+1)%ST.length];setS(id,nxt.k);applyS(this,nxt.k);});
+  b.addEventListener(&quot;click&quot;,function(e){
+    e.preventDefault();e.stopPropagation();
+    var cur=this.dataset.s,idx=ST.findIndex(function(s){return s.k===cur;}),nxt=ST[(idx+1)%ST.length];
+    setS(id,nxt.k);applyS(this,nxt.k);
+  });
   return b;
 }
 function applyS(b,k){var s=ST.find(function(x){return x.k===k;})||ST[0];b.dataset.s=s.k;b.textContent=s.dot+&quot; &quot;+s.txt;b.style.background=s.bg;b.style.color=s.fg;b.style.borderColor=s.bd;}
+
 function makeBmBtn(prob){
-  var b=document.createElement(&quot;button&quot;);b.className=&quot;bm-btn&quot;+(getBM(prob.id)?&quot; active&quot;:&quot;&quot;);b.title=&quot;Bookmark&quot;;b.textContent=&quot;🔖&quot;;
-  b.addEventListener(&quot;click&quot;,function(e){e.preventDefault();e.stopPropagation();var a=this.classList.toggle(&quot;active&quot;);setBM(prob.id,a);});
+  var b=document.createElement(&quot;button&quot;);
+  b.className=&quot;bm-btn&quot;+(getBM(prob.id)?&quot; active&quot;:&quot;&quot;);
+  b.title=&quot;Pin to review later&quot;;
+  b.textContent=&quot;📌&quot;;
+  b.addEventListener(&quot;click&quot;,function(e){
+    e.preventDefault();e.stopPropagation();
+    var a=this.classList.toggle(&quot;active&quot;);
+    setBM(prob.id,a);
+  });
   return b;
 }
-function esc(s){return s.replace(/&amp;/g,&quot;&amp;amp;&quot;).replace(/</g,&quot;&amp;lt;&quot;).replace(/>/g,&quot;&amp;gt;&quot;);}
+
 function refreshBar(){
   var c={none:0,confident:0,&quot;needs-work&quot;:0};
   IDS.forEach(function(id){var k=getS(id);c[k]=(c[k]||0)+1;});
   var tot=IDS.length||1;
   var cp=document.getElementById(&quot;__spb-c&quot;),np=document.getElementById(&quot;__spb-n&quot;);
   var sc=document.getElementById(&quot;__spb-sc&quot;),sn=document.getElementById(&quot;__spb-sn&quot;),su=document.getElementById(&quot;__spb-su&quot;);
-  if(cp)cp.style.width=(c.confident/tot*100)+&quot;%&quot;;if(np)np.style.width=(c[&quot;needs-work&quot;]/tot*100)+&quot;%&quot;;
-  if(sc)sc.textContent=c.confident+&quot; confident&quot;;if(sn)sn.textContent=c[&quot;needs-work&quot;]+&quot; needs work&quot;;if(su)su.textContent=c.none+&quot; not studied&quot;;
+  if(cp)cp.style.width=(c.confident/tot*100)+&quot;%&quot;;
+  if(np)np.style.width=(c[&quot;needs-work&quot;]/tot*100)+&quot;%&quot;;
+  if(sc)sc.textContent=c.confident+&quot; confident&quot;;
+  if(sn)sn.textContent=c[&quot;needs-work&quot;]+&quot; needs work&quot;;
+  if(su)su.textContent=c.none+&quot; not studied&quot;;
 }
+
 function buildBar(){
   var bar=document.createElement(&quot;div&quot;);bar.id=&quot;__spb&quot;;
   bar.innerHTML='<span class=&quot;spb-label&quot;>Progress</span><div class=&quot;spb-track&quot;><div class=&quot;spb-c&quot; id=&quot;__spb-c&quot; style=&quot;width:0%&quot;></div><div class=&quot;spb-n&quot; id=&quot;__spb-n&quot; style=&quot;width:0%&quot;></div></div><div class=&quot;spb-stats&quot;><span class=&quot;spb-stat&quot;><span class=&quot;spb-dot&quot; style=&quot;background:#3fb950&quot;></span><span id=&quot;__spb-sc&quot;>0 confident</span></span><span class=&quot;spb-stat&quot;><span class=&quot;spb-dot&quot; style=&quot;background:#d4a017&quot;></span><span id=&quot;__spb-sn&quot;>0 needs work</span></span><span class=&quot;spb-stat&quot;><span class=&quot;spb-dot&quot; style=&quot;background:#444&quot;></span><span id=&quot;__spb-su&quot;>0 not studied</span></span></div>';
   var nav=document.querySelector('nav,.toc-bar,.toc-wrapper,#toc-sidebar');
-  if(nav&amp;&amp;nav.nextSibling)nav.parentNode.insertBefore(bar,nav.nextSibling);else document.body.insertBefore(bar,document.body.firstChild);
+  if(nav&amp;&amp;nav.nextSibling)nav.parentNode.insertBefore(bar,nav.nextSibling);
+  else document.body.insertBefore(bar,document.body.firstChild);
   refreshBar();
 }
+
 function injectChips(){
   IDS.forEach(function(id){
     var el=document.getElementById(id);if(!el)return;var tgt=null;
@@ -5822,17 +5904,21 @@ function injectChips(){
     if(!tgt)return;tgt.appendChild(makeChip(id));
   });
 }
+
 function discoverProbs(){
   var els=document.querySelectorAll(PS);
   els.forEach(function(el,idx){
     var pid=&quot;prob_&quot;+idx;el.dataset.probId=pid;
-    var te=el.querySelector(TS),lbl=te?te.textContent.trim().slice(0,60):&quot;Problem &quot;+(idx+1);
+    var te=el.querySelector(TS);
+    var lbl=te?te.textContent.trim().replace(/\s+/g,' ').slice(0,60):&quot;Problem &quot;+(idx+1);
     var sect=findSect(el);
     probs.push({id:pid,label:lbl,section:sect,el:el});
-    var inj=te||el.querySelector(&quot;h2,h3,.problem-header,.example-header,.worked-header,.practice-header&quot;);
+    // Inject pin button next to the title element
+    var inj=te||el.querySelector(&quot;h2,h3,h4,.problem-header,.example-header&quot;);
     if(inj)inj.appendChild(makeBmBtn(probs[probs.length-1]));
   });
 }
+
 function renderSidebar(){
   var bm=probs.filter(function(p){return getBM(p.id);});
   if(bmCount)bmCount.textContent=bm.length;
@@ -5840,15 +5926,16 @@ function renderSidebar(){
   sbBody.innerHTML=&quot;&quot;;
   if(!bm.length){
     var e=document.createElement(&quot;div&quot;);e.id=&quot;bm-empty&quot;;
-    e.innerHTML=&quot;🔖<br>No bookmarks yet<br><span style='color:#2a3a4a;font-size:9px'>Click 🔖 on any practice problem</span>&quot;;
+    e.innerHTML=&quot;📌<br>Nothing pinned yet<br><span style='color:#2a3a4a;font-size:9px'>Click 📌 on a practice problem</span>&quot;;
     sbBody.appendChild(e);return;
   }
   bm.forEach(function(prob){
     var item=document.createElement(&quot;div&quot;);item.className=&quot;bm-item&quot;;
-    item.innerHTML='<div class=&quot;bm-item-dot&quot;></div><div class=&quot;bm-item-text&quot;><div class=&quot;bm-item-label&quot;>'+esc(prob.label)+'</div>'+(prob.section?'<div class=&quot;bm-item-sect&quot;>'+esc(prob.section)+'</div>':'')+' </div><button class=&quot;bm-item-rm&quot; title=&quot;Remove&quot;>✕</button>';
+    item.innerHTML='<div class=&quot;bm-item-dot&quot;></div><div class=&quot;bm-item-text&quot;><div class=&quot;bm-item-label&quot;>'+esc(prob.label)+'</div>'+(prob.section?'<div class=&quot;bm-item-sect&quot;>'+esc(prob.section)+'</div>':'')+'</div><button class=&quot;bm-item-rm&quot; title=&quot;Unpin&quot;>✕</button>';
     item.querySelector(&quot;.bm-item-text&quot;).addEventListener(&quot;click&quot;,function(){
       prob.el.scrollIntoView({behavior:&quot;smooth&quot;,block:&quot;start&quot;});
-      prob.el.style.transition=&quot;box-shadow .3s&quot;;prob.el.style.boxShadow=&quot;0 0 0 3px &quot;+COL+&quot;88&quot;;
+      prob.el.style.transition=&quot;box-shadow .3s&quot;;
+      prob.el.style.boxShadow=&quot;0 0 0 3px &quot;+COL+&quot;88&quot;;
       setTimeout(function(){prob.el.style.boxShadow=&quot;&quot;;},1400);
     });
     item.querySelector(&quot;.bm-item-rm&quot;).addEventListener(&quot;click&quot;,function(e){
@@ -5858,10 +5945,11 @@ function renderSidebar(){
     sbBody.appendChild(item);
   });
 }
+
 function buildSidebar(){
   sb=document.createElement(&quot;div&quot;);sb.id=&quot;bm-sidebar&quot;;
   var drag=document.createElement(&quot;div&quot;);drag.id=&quot;bm-drag&quot;;
-  drag.innerHTML='<div class=&quot;bm-grip&quot;><span></span><span></span><span></span></div><div id=&quot;bm-title&quot;>🔖 Bookmarks <span id=&quot;bm-count&quot;>0</span></div><button id=&quot;bm-collapse&quot;>−</button>';
+  drag.innerHTML='<div class=&quot;bm-grip&quot;><span></span><span></span><span></span></div><div id=&quot;bm-title&quot;>📌 Pinned <span id=&quot;bm-count&quot;>0</span></div><button id=&quot;bm-collapse&quot;>−</button>';
   sb.appendChild(drag);sbBody=document.createElement(&quot;div&quot;);sbBody.id=&quot;bm-body&quot;;sb.appendChild(sbBody);
   document.body.appendChild(sb);
   bmCount=document.getElementById(&quot;bm-count&quot;);
@@ -5878,6 +5966,7 @@ function buildSidebar(){
   document.addEventListener(&quot;touchend&quot;,function(){dr=false;});
   renderSidebar();
 }
+
 function init(){buildBar();injectChips();discoverProbs();buildSidebar();}
 if(document.readyState===&quot;loading&quot;)document.addEventListener(&quot;DOMContentLoaded&quot;,init);else init();
 })();
@@ -8977,11 +9066,10 @@ window.MathJax = {
 #bm-body::-webkit-scrollbar-thumb{background:#21293a;border-radius:2px;}
 #bm-empty{padding:20px 14px;text-align:center;color:#3d4f60;font-size:10px;letter-spacing:.06em;line-height:1.9;}
 .bm-item{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border-bottom:1px solid #0e1520;cursor:pointer;transition:background .12s;}
-.bm-item:last-child{border-bottom:none;}
-.bm-item:hover{background:#161b22;}
+.bm-item:last-child{border-bottom:none;}.bm-item:hover{background:#161b22;}
 .bm-item-dot{width:6px;height:6px;border-radius:50%;background:#d2a8ff;margin-top:4px;flex-shrink:0;}
 .bm-item-text{flex:1;line-height:1.5;}
-.bm-item-label{color:#c9d1d9;font-size:10.5px;font-weight:600;letter-spacing:.02em;}
+.bm-item-label{color:#c9d1d9;font-size:10.5px;font-weight:600;}
 .bm-item-sect{color:#3d4f60;font-size:9.5px;margin-top:1px;}
 .bm-item-rm{background:none;border:none;cursor:pointer;color:#2d3d4d;font-size:12px;padding:0;line-height:1;transition:color .12s;flex-shrink:0;margin-top:2px;}
 .bm-item-rm:hover{color:#f85149;}
@@ -8993,40 +9081,68 @@ window.MathJax = {
 var G=&quot;chgn122&quot;,PS=&quot;.problem&quot;,TS=&quot;.num&quot;,IDS=[&quot;strategy&quot;, &quot;ch10&quot;, &quot;ch11a&quot;, &quot;ch11b&quot;, &quot;ch12&quot;, &quot;ch13&quot;, &quot;ch14a&quot;, &quot;ch14b&quot;, &quot;ch14c&quot;, &quot;ch16&quot;, &quot;connections&quot;],SL={&quot;strategy&quot;: &quot;Exam Strategy&quot;, &quot;ch10&quot;: &quot;Ch 10: Kinetics&quot;, &quot;ch11a&quot;: &quot;Ch 11: Equilibrium&quot;, &quot;ch11b&quot;: &quot;Ch 11: ICE Tables&quot;, &quot;ch12&quot;: &quot;Ch 12: Acid-Base&quot;, &quot;ch13&quot;: &quot;Ch 13: Buffers&quot;, &quot;ch14a&quot;: &quot;Ch 14: Entropy&quot;, &quot;ch14b&quot;: &quot;Ch 14: Gibbs&quot;, &quot;ch14c&quot;: &quot;Ch 14: Electrochem&quot;, &quot;ch16&quot;: &quot;Ch 16: Nuclear&quot;, &quot;connections&quot;: &quot;Connections&quot;},COL=&quot;#d2a8ff&quot;;
 var ST=[{k:&quot;none&quot;,dot:&quot;●&quot;,txt:&quot;Not studied&quot;,bg:&quot;#1c1c1c22&quot;,fg:&quot;#888&quot;,bd:&quot;#ccc&quot;},{k:&quot;confident&quot;,dot:&quot;✓&quot;,txt:&quot;Confident&quot;,bg:&quot;#d1f5e0&quot;,fg:&quot;#1a5c38&quot;,bd:&quot;#5dbf88&quot;},{k:&quot;needs-work&quot;,dot:&quot;⚠&quot;,txt:&quot;Needs work&quot;,bg:&quot;#fffbe6&quot;,fg:&quot;#7a5500&quot;,bd:&quot;#d4a017&quot;}];
 var probs=[],sb,sbBody,bmCount,collapsed=false;
-document.addEventListener(&quot;click&quot;,function(e){var a=e.target.closest('a[href^=&quot;#&quot;]');if(!a)return;var h=a.getAttribute(&quot;href&quot;);if(!h||h===&quot;#&quot;)return;var t=document.querySelector(h);if(t){e.preventDefault();t.scrollIntoView({behavior:&quot;smooth&quot;});}},true);
+
+// Anchor-click bug fix
+document.addEventListener(&quot;click&quot;,function(e){
+  var a=e.target.closest('a[href^=&quot;#&quot;]');if(!a)return;
+  var h=a.getAttribute(&quot;href&quot;);if(!h||h===&quot;#&quot;)return;
+  var t=document.querySelector(h);
+  if(t){e.preventDefault();t.scrollIntoView({behavior:&quot;smooth&quot;});}
+},true);
+
 function getS(id){return localStorage.getItem(&quot;ss_&quot;+G+&quot;_&quot;+id)||&quot;none&quot;;}
 function setS(id,k){localStorage.setItem(&quot;ss_&quot;+G+&quot;_&quot;+id,k);refreshBar();try{window.parent.postMessage({t:&quot;su&quot;,g:G},&quot;*&quot;);}catch(e){}}
 function getBM(pid){return localStorage.getItem(&quot;bm_&quot;+G+&quot;_&quot;+pid)===&quot;1&quot;;}
 function setBM(pid,v){if(v)localStorage.setItem(&quot;bm_&quot;+G+&quot;_&quot;+pid,&quot;1&quot;);else localStorage.removeItem(&quot;bm_&quot;+G+&quot;_&quot;+pid);renderSidebar();}
 function findSect(el){var c=el;while(c){if(c.id&amp;&amp;SL[c.id])return SL[c.id];c=c.parentElement;}return &quot;&quot;;}
+function esc(s){return s.replace(/&amp;/g,&quot;&amp;amp;&quot;).replace(/</g,&quot;&amp;lt;&quot;).replace(/>/g,&quot;&amp;gt;&quot;);}
+
 function makeChip(id){
   var b=document.createElement(&quot;button&quot;);b.className=&quot;sc&quot;;b.dataset.section=id;applyS(b,getS(id));
-  b.addEventListener(&quot;click&quot;,function(e){e.preventDefault();e.stopPropagation();var cur=this.dataset.s,idx=ST.findIndex(function(s){return s.k===cur;}),nxt=ST[(idx+1)%ST.length];setS(id,nxt.k);applyS(this,nxt.k);});
+  b.addEventListener(&quot;click&quot;,function(e){
+    e.preventDefault();e.stopPropagation();
+    var cur=this.dataset.s,idx=ST.findIndex(function(s){return s.k===cur;}),nxt=ST[(idx+1)%ST.length];
+    setS(id,nxt.k);applyS(this,nxt.k);
+  });
   return b;
 }
 function applyS(b,k){var s=ST.find(function(x){return x.k===k;})||ST[0];b.dataset.s=s.k;b.textContent=s.dot+&quot; &quot;+s.txt;b.style.background=s.bg;b.style.color=s.fg;b.style.borderColor=s.bd;}
+
 function makeBmBtn(prob){
-  var b=document.createElement(&quot;button&quot;);b.className=&quot;bm-btn&quot;+(getBM(prob.id)?&quot; active&quot;:&quot;&quot;);b.title=&quot;Bookmark&quot;;b.textContent=&quot;🔖&quot;;
-  b.addEventListener(&quot;click&quot;,function(e){e.preventDefault();e.stopPropagation();var a=this.classList.toggle(&quot;active&quot;);setBM(prob.id,a);});
+  var b=document.createElement(&quot;button&quot;);
+  b.className=&quot;bm-btn&quot;+(getBM(prob.id)?&quot; active&quot;:&quot;&quot;);
+  b.title=&quot;Pin to review later&quot;;
+  b.textContent=&quot;📌&quot;;
+  b.addEventListener(&quot;click&quot;,function(e){
+    e.preventDefault();e.stopPropagation();
+    var a=this.classList.toggle(&quot;active&quot;);
+    setBM(prob.id,a);
+  });
   return b;
 }
-function esc(s){return s.replace(/&amp;/g,&quot;&amp;amp;&quot;).replace(/</g,&quot;&amp;lt;&quot;).replace(/>/g,&quot;&amp;gt;&quot;);}
+
 function refreshBar(){
   var c={none:0,confident:0,&quot;needs-work&quot;:0};
   IDS.forEach(function(id){var k=getS(id);c[k]=(c[k]||0)+1;});
   var tot=IDS.length||1;
   var cp=document.getElementById(&quot;__spb-c&quot;),np=document.getElementById(&quot;__spb-n&quot;);
   var sc=document.getElementById(&quot;__spb-sc&quot;),sn=document.getElementById(&quot;__spb-sn&quot;),su=document.getElementById(&quot;__spb-su&quot;);
-  if(cp)cp.style.width=(c.confident/tot*100)+&quot;%&quot;;if(np)np.style.width=(c[&quot;needs-work&quot;]/tot*100)+&quot;%&quot;;
-  if(sc)sc.textContent=c.confident+&quot; confident&quot;;if(sn)sn.textContent=c[&quot;needs-work&quot;]+&quot; needs work&quot;;if(su)su.textContent=c.none+&quot; not studied&quot;;
+  if(cp)cp.style.width=(c.confident/tot*100)+&quot;%&quot;;
+  if(np)np.style.width=(c[&quot;needs-work&quot;]/tot*100)+&quot;%&quot;;
+  if(sc)sc.textContent=c.confident+&quot; confident&quot;;
+  if(sn)sn.textContent=c[&quot;needs-work&quot;]+&quot; needs work&quot;;
+  if(su)su.textContent=c.none+&quot; not studied&quot;;
 }
+
 function buildBar(){
   var bar=document.createElement(&quot;div&quot;);bar.id=&quot;__spb&quot;;
   bar.innerHTML='<span class=&quot;spb-label&quot;>Progress</span><div class=&quot;spb-track&quot;><div class=&quot;spb-c&quot; id=&quot;__spb-c&quot; style=&quot;width:0%&quot;></div><div class=&quot;spb-n&quot; id=&quot;__spb-n&quot; style=&quot;width:0%&quot;></div></div><div class=&quot;spb-stats&quot;><span class=&quot;spb-stat&quot;><span class=&quot;spb-dot&quot; style=&quot;background:#3fb950&quot;></span><span id=&quot;__spb-sc&quot;>0 confident</span></span><span class=&quot;spb-stat&quot;><span class=&quot;spb-dot&quot; style=&quot;background:#d4a017&quot;></span><span id=&quot;__spb-sn&quot;>0 needs work</span></span><span class=&quot;spb-stat&quot;><span class=&quot;spb-dot&quot; style=&quot;background:#444&quot;></span><span id=&quot;__spb-su&quot;>0 not studied</span></span></div>';
   var nav=document.querySelector('nav,.toc-bar,.toc-wrapper,#toc-sidebar');
-  if(nav&amp;&amp;nav.nextSibling)nav.parentNode.insertBefore(bar,nav.nextSibling);else document.body.insertBefore(bar,document.body.firstChild);
+  if(nav&amp;&amp;nav.nextSibling)nav.parentNode.insertBefore(bar,nav.nextSibling);
+  else document.body.insertBefore(bar,document.body.firstChild);
   refreshBar();
 }
+
 function injectChips(){
   IDS.forEach(function(id){
     var el=document.getElementById(id);if(!el)return;var tgt=null;
@@ -9039,17 +9155,21 @@ function injectChips(){
     if(!tgt)return;tgt.appendChild(makeChip(id));
   });
 }
+
 function discoverProbs(){
   var els=document.querySelectorAll(PS);
   els.forEach(function(el,idx){
     var pid=&quot;prob_&quot;+idx;el.dataset.probId=pid;
-    var te=el.querySelector(TS),lbl=te?te.textContent.trim().slice(0,60):&quot;Problem &quot;+(idx+1);
+    var te=el.querySelector(TS);
+    var lbl=te?te.textContent.trim().replace(/\s+/g,' ').slice(0,60):&quot;Problem &quot;+(idx+1);
     var sect=findSect(el);
     probs.push({id:pid,label:lbl,section:sect,el:el});
-    var inj=te||el.querySelector(&quot;h2,h3,.problem-header,.example-header,.worked-header,.practice-header&quot;);
+    // Inject pin button next to the title element
+    var inj=te||el.querySelector(&quot;h2,h3,h4,.problem-header,.example-header&quot;);
     if(inj)inj.appendChild(makeBmBtn(probs[probs.length-1]));
   });
 }
+
 function renderSidebar(){
   var bm=probs.filter(function(p){return getBM(p.id);});
   if(bmCount)bmCount.textContent=bm.length;
@@ -9057,15 +9177,16 @@ function renderSidebar(){
   sbBody.innerHTML=&quot;&quot;;
   if(!bm.length){
     var e=document.createElement(&quot;div&quot;);e.id=&quot;bm-empty&quot;;
-    e.innerHTML=&quot;🔖<br>No bookmarks yet<br><span style='color:#2a3a4a;font-size:9px'>Click 🔖 on any practice problem</span>&quot;;
+    e.innerHTML=&quot;📌<br>Nothing pinned yet<br><span style='color:#2a3a4a;font-size:9px'>Click 📌 on a practice problem</span>&quot;;
     sbBody.appendChild(e);return;
   }
   bm.forEach(function(prob){
     var item=document.createElement(&quot;div&quot;);item.className=&quot;bm-item&quot;;
-    item.innerHTML='<div class=&quot;bm-item-dot&quot;></div><div class=&quot;bm-item-text&quot;><div class=&quot;bm-item-label&quot;>'+esc(prob.label)+'</div>'+(prob.section?'<div class=&quot;bm-item-sect&quot;>'+esc(prob.section)+'</div>':'')+' </div><button class=&quot;bm-item-rm&quot; title=&quot;Remove&quot;>✕</button>';
+    item.innerHTML='<div class=&quot;bm-item-dot&quot;></div><div class=&quot;bm-item-text&quot;><div class=&quot;bm-item-label&quot;>'+esc(prob.label)+'</div>'+(prob.section?'<div class=&quot;bm-item-sect&quot;>'+esc(prob.section)+'</div>':'')+'</div><button class=&quot;bm-item-rm&quot; title=&quot;Unpin&quot;>✕</button>';
     item.querySelector(&quot;.bm-item-text&quot;).addEventListener(&quot;click&quot;,function(){
       prob.el.scrollIntoView({behavior:&quot;smooth&quot;,block:&quot;start&quot;});
-      prob.el.style.transition=&quot;box-shadow .3s&quot;;prob.el.style.boxShadow=&quot;0 0 0 3px &quot;+COL+&quot;88&quot;;
+      prob.el.style.transition=&quot;box-shadow .3s&quot;;
+      prob.el.style.boxShadow=&quot;0 0 0 3px &quot;+COL+&quot;88&quot;;
       setTimeout(function(){prob.el.style.boxShadow=&quot;&quot;;},1400);
     });
     item.querySelector(&quot;.bm-item-rm&quot;).addEventListener(&quot;click&quot;,function(e){
@@ -9075,10 +9196,11 @@ function renderSidebar(){
     sbBody.appendChild(item);
   });
 }
+
 function buildSidebar(){
   sb=document.createElement(&quot;div&quot;);sb.id=&quot;bm-sidebar&quot;;
   var drag=document.createElement(&quot;div&quot;);drag.id=&quot;bm-drag&quot;;
-  drag.innerHTML='<div class=&quot;bm-grip&quot;><span></span><span></span><span></span></div><div id=&quot;bm-title&quot;>🔖 Bookmarks <span id=&quot;bm-count&quot;>0</span></div><button id=&quot;bm-collapse&quot;>−</button>';
+  drag.innerHTML='<div class=&quot;bm-grip&quot;><span></span><span></span><span></span></div><div id=&quot;bm-title&quot;>📌 Pinned <span id=&quot;bm-count&quot;>0</span></div><button id=&quot;bm-collapse&quot;>−</button>';
   sb.appendChild(drag);sbBody=document.createElement(&quot;div&quot;);sbBody.id=&quot;bm-body&quot;;sb.appendChild(sbBody);
   document.body.appendChild(sb);
   bmCount=document.getElementById(&quot;bm-count&quot;);
@@ -9095,6 +9217,7 @@ function buildSidebar(){
   document.addEventListener(&quot;touchend&quot;,function(){dr=false;});
   renderSidebar();
 }
+
 function init(){buildBar();injectChips();discoverProbs();buildSidebar();}
 if(document.readyState===&quot;loading&quot;)document.addEventListener(&quot;DOMContentLoaded&quot;,init);else init();
 })();
@@ -10545,11 +10668,10 @@ MathJax = {
 #bm-body::-webkit-scrollbar-thumb{background:#21293a;border-radius:2px;}
 #bm-empty{padding:20px 14px;text-align:center;color:#3d4f60;font-size:10px;letter-spacing:.06em;line-height:1.9;}
 .bm-item{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border-bottom:1px solid #0e1520;cursor:pointer;transition:background .12s;}
-.bm-item:last-child{border-bottom:none;}
-.bm-item:hover{background:#161b22;}
+.bm-item:last-child{border-bottom:none;}.bm-item:hover{background:#161b22;}
 .bm-item-dot{width:6px;height:6px;border-radius:50%;background:#ffa657;margin-top:4px;flex-shrink:0;}
 .bm-item-text{flex:1;line-height:1.5;}
-.bm-item-label{color:#c9d1d9;font-size:10.5px;font-weight:600;letter-spacing:.02em;}
+.bm-item-label{color:#c9d1d9;font-size:10.5px;font-weight:600;}
 .bm-item-sect{color:#3d4f60;font-size:9.5px;margin-top:1px;}
 .bm-item-rm{background:none;border:none;cursor:pointer;color:#2d3d4d;font-size:12px;padding:0;line-height:1;transition:color .12s;flex-shrink:0;margin-top:2px;}
 .bm-item-rm:hover{color:#f85149;}
@@ -10561,40 +10683,68 @@ MathJax = {
 var G=&quot;math332&quot;,PS=&quot;.practice-block&quot;,TS=&quot;.practice-header&quot;,IDS=[&quot;oc14&quot;, &quot;oc15&quot;, &quot;oc16&quot;, &quot;oc18&quot;, &quot;oc20&quot;, &quot;oc21&quot;, &quot;oc22&quot;],SL={&quot;oc14&quot;: &quot;OC14: Dimension&quot;, &quot;oc15&quot;: &quot;OC15: Eigenvalues&quot;, &quot;oc16&quot;: &quot;OC16: Matrix Props&quot;, &quot;oc18&quot;: &quot;OC18: Norms&quot;, &quot;oc20&quot;: &quot;OC20: Gram-Schmidt&quot;, &quot;oc21&quot;: &quot;OC21: Least Squares&quot;, &quot;oc22&quot;: &quot;OC22: SVD&quot;},COL=&quot;#ffa657&quot;;
 var ST=[{k:&quot;none&quot;,dot:&quot;●&quot;,txt:&quot;Not studied&quot;,bg:&quot;#1c1c1c22&quot;,fg:&quot;#888&quot;,bd:&quot;#ccc&quot;},{k:&quot;confident&quot;,dot:&quot;✓&quot;,txt:&quot;Confident&quot;,bg:&quot;#d1f5e0&quot;,fg:&quot;#1a5c38&quot;,bd:&quot;#5dbf88&quot;},{k:&quot;needs-work&quot;,dot:&quot;⚠&quot;,txt:&quot;Needs work&quot;,bg:&quot;#fffbe6&quot;,fg:&quot;#7a5500&quot;,bd:&quot;#d4a017&quot;}];
 var probs=[],sb,sbBody,bmCount,collapsed=false;
-document.addEventListener(&quot;click&quot;,function(e){var a=e.target.closest('a[href^=&quot;#&quot;]');if(!a)return;var h=a.getAttribute(&quot;href&quot;);if(!h||h===&quot;#&quot;)return;var t=document.querySelector(h);if(t){e.preventDefault();t.scrollIntoView({behavior:&quot;smooth&quot;});}},true);
+
+// Anchor-click bug fix
+document.addEventListener(&quot;click&quot;,function(e){
+  var a=e.target.closest('a[href^=&quot;#&quot;]');if(!a)return;
+  var h=a.getAttribute(&quot;href&quot;);if(!h||h===&quot;#&quot;)return;
+  var t=document.querySelector(h);
+  if(t){e.preventDefault();t.scrollIntoView({behavior:&quot;smooth&quot;});}
+},true);
+
 function getS(id){return localStorage.getItem(&quot;ss_&quot;+G+&quot;_&quot;+id)||&quot;none&quot;;}
 function setS(id,k){localStorage.setItem(&quot;ss_&quot;+G+&quot;_&quot;+id,k);refreshBar();try{window.parent.postMessage({t:&quot;su&quot;,g:G},&quot;*&quot;);}catch(e){}}
 function getBM(pid){return localStorage.getItem(&quot;bm_&quot;+G+&quot;_&quot;+pid)===&quot;1&quot;;}
 function setBM(pid,v){if(v)localStorage.setItem(&quot;bm_&quot;+G+&quot;_&quot;+pid,&quot;1&quot;);else localStorage.removeItem(&quot;bm_&quot;+G+&quot;_&quot;+pid);renderSidebar();}
 function findSect(el){var c=el;while(c){if(c.id&amp;&amp;SL[c.id])return SL[c.id];c=c.parentElement;}return &quot;&quot;;}
+function esc(s){return s.replace(/&amp;/g,&quot;&amp;amp;&quot;).replace(/</g,&quot;&amp;lt;&quot;).replace(/>/g,&quot;&amp;gt;&quot;);}
+
 function makeChip(id){
   var b=document.createElement(&quot;button&quot;);b.className=&quot;sc&quot;;b.dataset.section=id;applyS(b,getS(id));
-  b.addEventListener(&quot;click&quot;,function(e){e.preventDefault();e.stopPropagation();var cur=this.dataset.s,idx=ST.findIndex(function(s){return s.k===cur;}),nxt=ST[(idx+1)%ST.length];setS(id,nxt.k);applyS(this,nxt.k);});
+  b.addEventListener(&quot;click&quot;,function(e){
+    e.preventDefault();e.stopPropagation();
+    var cur=this.dataset.s,idx=ST.findIndex(function(s){return s.k===cur;}),nxt=ST[(idx+1)%ST.length];
+    setS(id,nxt.k);applyS(this,nxt.k);
+  });
   return b;
 }
 function applyS(b,k){var s=ST.find(function(x){return x.k===k;})||ST[0];b.dataset.s=s.k;b.textContent=s.dot+&quot; &quot;+s.txt;b.style.background=s.bg;b.style.color=s.fg;b.style.borderColor=s.bd;}
+
 function makeBmBtn(prob){
-  var b=document.createElement(&quot;button&quot;);b.className=&quot;bm-btn&quot;+(getBM(prob.id)?&quot; active&quot;:&quot;&quot;);b.title=&quot;Bookmark&quot;;b.textContent=&quot;🔖&quot;;
-  b.addEventListener(&quot;click&quot;,function(e){e.preventDefault();e.stopPropagation();var a=this.classList.toggle(&quot;active&quot;);setBM(prob.id,a);});
+  var b=document.createElement(&quot;button&quot;);
+  b.className=&quot;bm-btn&quot;+(getBM(prob.id)?&quot; active&quot;:&quot;&quot;);
+  b.title=&quot;Pin to review later&quot;;
+  b.textContent=&quot;📌&quot;;
+  b.addEventListener(&quot;click&quot;,function(e){
+    e.preventDefault();e.stopPropagation();
+    var a=this.classList.toggle(&quot;active&quot;);
+    setBM(prob.id,a);
+  });
   return b;
 }
-function esc(s){return s.replace(/&amp;/g,&quot;&amp;amp;&quot;).replace(/</g,&quot;&amp;lt;&quot;).replace(/>/g,&quot;&amp;gt;&quot;);}
+
 function refreshBar(){
   var c={none:0,confident:0,&quot;needs-work&quot;:0};
   IDS.forEach(function(id){var k=getS(id);c[k]=(c[k]||0)+1;});
   var tot=IDS.length||1;
   var cp=document.getElementById(&quot;__spb-c&quot;),np=document.getElementById(&quot;__spb-n&quot;);
   var sc=document.getElementById(&quot;__spb-sc&quot;),sn=document.getElementById(&quot;__spb-sn&quot;),su=document.getElementById(&quot;__spb-su&quot;);
-  if(cp)cp.style.width=(c.confident/tot*100)+&quot;%&quot;;if(np)np.style.width=(c[&quot;needs-work&quot;]/tot*100)+&quot;%&quot;;
-  if(sc)sc.textContent=c.confident+&quot; confident&quot;;if(sn)sn.textContent=c[&quot;needs-work&quot;]+&quot; needs work&quot;;if(su)su.textContent=c.none+&quot; not studied&quot;;
+  if(cp)cp.style.width=(c.confident/tot*100)+&quot;%&quot;;
+  if(np)np.style.width=(c[&quot;needs-work&quot;]/tot*100)+&quot;%&quot;;
+  if(sc)sc.textContent=c.confident+&quot; confident&quot;;
+  if(sn)sn.textContent=c[&quot;needs-work&quot;]+&quot; needs work&quot;;
+  if(su)su.textContent=c.none+&quot; not studied&quot;;
 }
+
 function buildBar(){
   var bar=document.createElement(&quot;div&quot;);bar.id=&quot;__spb&quot;;
   bar.innerHTML='<span class=&quot;spb-label&quot;>Progress</span><div class=&quot;spb-track&quot;><div class=&quot;spb-c&quot; id=&quot;__spb-c&quot; style=&quot;width:0%&quot;></div><div class=&quot;spb-n&quot; id=&quot;__spb-n&quot; style=&quot;width:0%&quot;></div></div><div class=&quot;spb-stats&quot;><span class=&quot;spb-stat&quot;><span class=&quot;spb-dot&quot; style=&quot;background:#3fb950&quot;></span><span id=&quot;__spb-sc&quot;>0 confident</span></span><span class=&quot;spb-stat&quot;><span class=&quot;spb-dot&quot; style=&quot;background:#d4a017&quot;></span><span id=&quot;__spb-sn&quot;>0 needs work</span></span><span class=&quot;spb-stat&quot;><span class=&quot;spb-dot&quot; style=&quot;background:#444&quot;></span><span id=&quot;__spb-su&quot;>0 not studied</span></span></div>';
   var nav=document.querySelector('nav,.toc-bar,.toc-wrapper,#toc-sidebar');
-  if(nav&amp;&amp;nav.nextSibling)nav.parentNode.insertBefore(bar,nav.nextSibling);else document.body.insertBefore(bar,document.body.firstChild);
+  if(nav&amp;&amp;nav.nextSibling)nav.parentNode.insertBefore(bar,nav.nextSibling);
+  else document.body.insertBefore(bar,document.body.firstChild);
   refreshBar();
 }
+
 function injectChips(){
   IDS.forEach(function(id){
     var el=document.getElementById(id);if(!el)return;var tgt=null;
@@ -10607,17 +10757,21 @@ function injectChips(){
     if(!tgt)return;tgt.appendChild(makeChip(id));
   });
 }
+
 function discoverProbs(){
   var els=document.querySelectorAll(PS);
   els.forEach(function(el,idx){
     var pid=&quot;prob_&quot;+idx;el.dataset.probId=pid;
-    var te=el.querySelector(TS),lbl=te?te.textContent.trim().slice(0,60):&quot;Problem &quot;+(idx+1);
+    var te=el.querySelector(TS);
+    var lbl=te?te.textContent.trim().replace(/\s+/g,' ').slice(0,60):&quot;Problem &quot;+(idx+1);
     var sect=findSect(el);
     probs.push({id:pid,label:lbl,section:sect,el:el});
-    var inj=te||el.querySelector(&quot;h2,h3,.problem-header,.example-header,.worked-header,.practice-header&quot;);
+    // Inject pin button next to the title element
+    var inj=te||el.querySelector(&quot;h2,h3,h4,.problem-header,.example-header&quot;);
     if(inj)inj.appendChild(makeBmBtn(probs[probs.length-1]));
   });
 }
+
 function renderSidebar(){
   var bm=probs.filter(function(p){return getBM(p.id);});
   if(bmCount)bmCount.textContent=bm.length;
@@ -10625,15 +10779,16 @@ function renderSidebar(){
   sbBody.innerHTML=&quot;&quot;;
   if(!bm.length){
     var e=document.createElement(&quot;div&quot;);e.id=&quot;bm-empty&quot;;
-    e.innerHTML=&quot;🔖<br>No bookmarks yet<br><span style='color:#2a3a4a;font-size:9px'>Click 🔖 on any practice problem</span>&quot;;
+    e.innerHTML=&quot;📌<br>Nothing pinned yet<br><span style='color:#2a3a4a;font-size:9px'>Click 📌 on a practice problem</span>&quot;;
     sbBody.appendChild(e);return;
   }
   bm.forEach(function(prob){
     var item=document.createElement(&quot;div&quot;);item.className=&quot;bm-item&quot;;
-    item.innerHTML='<div class=&quot;bm-item-dot&quot;></div><div class=&quot;bm-item-text&quot;><div class=&quot;bm-item-label&quot;>'+esc(prob.label)+'</div>'+(prob.section?'<div class=&quot;bm-item-sect&quot;>'+esc(prob.section)+'</div>':'')+' </div><button class=&quot;bm-item-rm&quot; title=&quot;Remove&quot;>✕</button>';
+    item.innerHTML='<div class=&quot;bm-item-dot&quot;></div><div class=&quot;bm-item-text&quot;><div class=&quot;bm-item-label&quot;>'+esc(prob.label)+'</div>'+(prob.section?'<div class=&quot;bm-item-sect&quot;>'+esc(prob.section)+'</div>':'')+'</div><button class=&quot;bm-item-rm&quot; title=&quot;Unpin&quot;>✕</button>';
     item.querySelector(&quot;.bm-item-text&quot;).addEventListener(&quot;click&quot;,function(){
       prob.el.scrollIntoView({behavior:&quot;smooth&quot;,block:&quot;start&quot;});
-      prob.el.style.transition=&quot;box-shadow .3s&quot;;prob.el.style.boxShadow=&quot;0 0 0 3px &quot;+COL+&quot;88&quot;;
+      prob.el.style.transition=&quot;box-shadow .3s&quot;;
+      prob.el.style.boxShadow=&quot;0 0 0 3px &quot;+COL+&quot;88&quot;;
       setTimeout(function(){prob.el.style.boxShadow=&quot;&quot;;},1400);
     });
     item.querySelector(&quot;.bm-item-rm&quot;).addEventListener(&quot;click&quot;,function(e){
@@ -10643,10 +10798,11 @@ function renderSidebar(){
     sbBody.appendChild(item);
   });
 }
+
 function buildSidebar(){
   sb=document.createElement(&quot;div&quot;);sb.id=&quot;bm-sidebar&quot;;
   var drag=document.createElement(&quot;div&quot;);drag.id=&quot;bm-drag&quot;;
-  drag.innerHTML='<div class=&quot;bm-grip&quot;><span></span><span></span><span></span></div><div id=&quot;bm-title&quot;>🔖 Bookmarks <span id=&quot;bm-count&quot;>0</span></div><button id=&quot;bm-collapse&quot;>−</button>';
+  drag.innerHTML='<div class=&quot;bm-grip&quot;><span></span><span></span><span></span></div><div id=&quot;bm-title&quot;>📌 Pinned <span id=&quot;bm-count&quot;>0</span></div><button id=&quot;bm-collapse&quot;>−</button>';
   sb.appendChild(drag);sbBody=document.createElement(&quot;div&quot;);sbBody.id=&quot;bm-body&quot;;sb.appendChild(sbBody);
   document.body.appendChild(sb);
   bmCount=document.getElementById(&quot;bm-count&quot;);
@@ -10663,6 +10819,7 @@ function buildSidebar(){
   document.addEventListener(&quot;touchend&quot;,function(){dr=false;});
   renderSidebar();
 }
+
 function init(){buildBar();injectChips();discoverProbs();buildSidebar();}
 if(document.readyState===&quot;loading&quot;)document.addEventListener(&quot;DOMContentLoaded&quot;,init);else init();
 })();
@@ -11576,7 +11733,7 @@ const wraps=document.querySelectorAll('.tab-wrap'),frames=document.querySelector
 function switchTo(key){wraps.forEach(w=>w.classList.toggle('active',w.dataset.guide===key));frames.forEach(f=>f.classList.toggle('active',f.id==='frame-'+key));try{sessionStorage.setItem('studyTab',key);}catch(e){}}
 wraps.forEach(w=>w.querySelector('.tab-btn').addEventListener('click',()=>switchTo(w.dataset.guide)));
 function loadDone(){wraps.forEach(w=>{const done=localStorage.getItem('finalDone_'+w.dataset.guide)==='1';w.classList.toggle('finalized',done);const btn=w.querySelector('.done-btn');if(btn)btn.textContent=done?'✓ Done':'✓';});}
-document.querySelectorAll('.done-btn').forEach(btn=>{btn.addEventListener('click',e=>{e.stopPropagation();const guide=btn.dataset.guide,wrap=btn.closest('.tab-wrap'),isDone=wrap.classList.toggle('finalized');localStorage.setItem('finalDone_'+guide,isDone?'1':'0');btn.textContent=isDone?'✓ Done':'✓';});});
+document.querySelectorAll('.done-btn').forEach(btn=>btn.addEventListener('click',e=>{e.stopPropagation();const guide=btn.dataset.guide,wrap=btn.closest('.tab-wrap'),isDone=wrap.classList.toggle('finalized');localStorage.setItem('finalDone_'+guide,isDone?'1':'0');btn.textContent=isDone?'✓ Done':'✓';}));
 window.addEventListener('message',e=>{if(e.data&&e.data.t==='su')updateTabProgress();});
 window.addEventListener('storage',()=>updateTabProgress());
 loadDone();updateTabProgress();
